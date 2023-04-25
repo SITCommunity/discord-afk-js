@@ -1,0 +1,36 @@
+{
+  "name": "discord-afk-js",
+  "version": "1.0.2-beta",
+  "description": "discord afk package",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CyraTeam/afk-js.git"
+  },
+  "keywords": [
+    "discord",
+    "discord-afk",
+    "bot",
+    "bots",
+    "discord-bot",
+    "discord.js",
+    "afks",
+    "afk",
+    "afk-js"
+  ],
+  "author": "brokenedtz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CyraTeam/afk-js/issues"
+  },
+  "homepage": "https://github.com/CyraTeam/afk-js#readme",
+  "dependencies": {
+    "node-fetch": "^3.3.1"
+  },
+  "devDependencies": {
+    "discord.js": "^14.9.0"
+  }
+}
