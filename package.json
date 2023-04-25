@@ -1,6 +1,6 @@
 {
   "name": "discord-afk-js",
-  "version": "1.0.2-beta",
+  "version": "1.0.4-beta",
   "description": "discord afk package",
   "main": "./src/index.js",
   "scripts": {
