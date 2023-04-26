@@ -53,7 +53,7 @@ message.reply(`set afk to ${message.member}, Reason: ${reason}`);
 ```
 
 ## Join our Discord server
-- [CyraTeam](https://cyrabot.groups.id/discord/)
+  <a href="https://discord.gg/qpT2AeYZRN" target="_blank"><img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord"></a>
 
 ## Staff
 - [@brokenedtzjs](https://github.com/brokenedtzjs) Founder discord-afk-js
