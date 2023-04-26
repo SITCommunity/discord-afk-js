@@ -18,6 +18,9 @@
 # Discord RPC
 [discord-afk-js](https://github.com/CyraTeam/discord-afk-js) package for more easy to make afk command without db (database)
 
+## discord-afk-js Powered by
+- [@discordjs/collections](https://github.com/discordjs/discord.js)
+
 ## Install
 - NPM
 ```
@@ -37,11 +40,11 @@ message.reply(`set afk to ${message.member}, Reason: ${reason}`);
 ```
 
 ## More Example
-bot.js
+- bot.js
 ```js
 
 ```
-afk.js
+- afk.js
 ```js
 const { afk } = require('discord-afk-js');
 const reason = args.join(' ') || 'No Reason';
@@ -49,10 +52,13 @@ afk.set(message.author.id, [Date.now(), reason]);
 message.reply(`set afk to ${message.member}, Reason: ${reason}`);
 ```
 
-Join our Discord server [here](https://cyrabot.groups.id/discord/)
+## Join our Discord server
+- [CyraTeam](https://cyrabot.groups.id/discord/)
+
+## Staff
+- [@brokenedtzjs](https://github.com/brokenedtzjs) Founder discord-afk-js
 
 ## License & Copyright
-
 ```
 This Project under Apache License 2.0
 Copyright (c) 2021-present CyraTeam

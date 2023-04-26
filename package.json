@@ -31,6 +31,7 @@
     "node-fetch": "^3.3.1"
   },
   "devDependencies": {
+    "@discordjs/collection": "^1.5.0",
     "discord.js": "^14.9.0"
   }
 }
