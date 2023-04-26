@@ -1,14 +1,18 @@
 {
   "name": "discord-afk-js",
-  "version": "1.2.4",
+  "version": "1.2.8",
   "description": "discord afk package",
-  "main": "./src/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CyraTeam/discord-afk-js.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "discord",
