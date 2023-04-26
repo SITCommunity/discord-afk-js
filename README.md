@@ -69,12 +69,13 @@ const { afk } = require('discord-afk-js');
 module.exports = {
   name: 'afk',
 
-  run:async(client, message, args) => {
+  run: async(client, message, args) => {
     const reason = args.join(' ') || 'No Reason';
     afk.set(message.author.id, [Date.now(), reason]);
     message.reply(`set afk to ${message.member}, Reason: ${reason}`);
   },
 };
+
 //example without events
 const { Events } = require('discord.js');
 const { afk } = require('discord-afk-js');
