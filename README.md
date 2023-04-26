@@ -24,6 +24,10 @@
 npm i discord-afk-js
 ```
 
+## Requirements
+- [NodeJS](https://nodejs.org) 16.9.0 or higher
+- [DiscordJS](https://discord.js.org) v14
+
 ## Quick example
 ```js
 const { afk } = require('discord-afk-js');
@@ -47,7 +51,7 @@ message.reply(`set afk to ${message.member}, Reason: ${reason}`);
 
 Join our Discord server [here](https://cyrabot.groups.id/discord/)
 
-## Licence & Copyright
+## License & Copyright
 
 ```
 This Project under Apache License 2.0
