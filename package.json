@@ -1,8 +1,8 @@
 {
   "name": "discord-afk-js",
-  "version": "1.2.0",
+  "version": "1.2.4",
   "description": "discord afk package",
-  "main": "./src/index.js",
+  "main": "./src/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

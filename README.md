@@ -42,7 +42,24 @@ message.reply(`set afk to ${message.member}, Reason: ${reason}`);
 ## More Example
 - bot.js
 ```js
+const { Events } = require('discord.js');
+const { afk } = require('discord-afk-js');
+const moment = require('moment');
 
+client.on(Events.MessageCreate, async(message) => {
+  const member = message.mentions.members.first();
+  const data = afk.get(member.id);
+  if(data) {
+    const [timestamp, reason] = data;
+    const timeago = moment(timestamp).fromNow();
+    message.reply(`${member} afk right now, Reason: ${reason} ${timeago}`)
+  };
+  const getdata afk.get(message.author.id);
+  if(getdata) {
+    afk.delete(message.author.id);
+    message.reply(`${message.member} removed you from afk`);
+  };
+});
 ```
 - afk.js
 ```js
