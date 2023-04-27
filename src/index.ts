@@ -1,1 +1,1 @@
-export { afk } from "./Collection/index";
+export { afk } from "./Collection/afk";

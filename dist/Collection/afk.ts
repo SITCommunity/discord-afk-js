@@ -8,7 +8,7 @@ import { Collection } from '@discordjs/collection';
  *afk.get(userId: string)
  *```
  */
-const afk = new Collection();
+const afk = new Collection<any, any>();
 
 /**
  * The {@link https://github.com/CyraTeam/discord-afk-js/#readme | discord-afk-js} version
@@ -17,3 +17,4 @@ const afk = new Collection();
 declare const version: string;
 
 export { afk, version };
+//# sourceMappingURL=afk.ts.map
