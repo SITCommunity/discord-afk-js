@@ -95,6 +95,6 @@ client.on(Events.MessageCreate, async(message) => {
 
 ## License & Copyright
 ```
-This Project under Apache License 2.0
-Copyright (c) 2021-present CyraTeam
+This Project under MIT License
+Copyright (c) 2023-present CyraTeam
 ```
