@@ -15,7 +15,7 @@
   </p>
 </div>
 
-# Discord RPC
+# discord-afk-js
 [discord-afk-js](https://github.com/CyraTeam/discord-afk-js) package for more easy to make afk command without db (database)
 
 ## discord-afk-js Powered by
