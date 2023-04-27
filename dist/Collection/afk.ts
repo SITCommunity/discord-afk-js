@@ -1,12 +1,9 @@
 import { Collection } from '@discordjs/collection';
 
 /**
- *discord-afk-js package for more easy to make afk command without db (database)
- *@example
- *```js
- *afk.set(userId: string, [Date.now(), reason: string])
- *afk.get(userId: string)
- *```
+ * discord-afk-js package for more easy to make afk command without db (database)
+ *
+ * click this for example about {@link https://github.com/CyraTeam/discord-afk-js/#readme | discord-afk-js} package
  */
 const afk = new Collection<any, any>();
 
