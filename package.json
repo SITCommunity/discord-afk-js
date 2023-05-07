@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/CyraTeam/discord-afk-js#readme",
   "dependencies": {
+    "@vercel/analytics": "^1.0.1",
     "node-fetch": "^3.3.1"
   },
   "devDependencies": {
