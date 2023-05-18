@@ -1,5 +1,6 @@
 import { Collection } from '@discordjs/collection';
-import { default as searchForNewUpdate } from '../function/version';
+import updateNotifier from 'update-notifier';
+import pkgjs from '../../package.json' assert { type: 'json' };
 
 /**
  * discord-afk-js package for more easy to make afk command without db (database)
@@ -13,8 +14,9 @@ const afk = new Collection<any, any>();
  * that you are currently using.
  */
 declare const version: string;
-
-searchForNewUpdate({ state: true });
+const notifier = updateNotifier({ pkg: pkgjs, updateCheckInterval: 1000 * 60 * 60 * 24 })
+notifier.notify();
+console.log(notifier.update);
 
 export { afk, version };
 //# sourceMappingURL=afk.ts.map

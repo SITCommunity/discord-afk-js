@@ -34,11 +34,18 @@ module.exports = __toCommonJS(src_exports);
 
 const { Collection } = require("@discordjs/collection");
 const afk = new Collection();
-const { searchForNewUpdate } = require("../function/version.ts").default;
+const updateNotifier = require('update-notifier');
+const pkgjs = require('../../package.json');
 
 __name(afk, "afk");
 const version = "1.4.0";
-searchForNewUpdate({ state: true })
+const notifier = updateNotifier({ pkg: pkgjs, updateCheckInterval: 1000 * 60 * 60 * 24 })
+if(notifier.update) {
+    console.log("\n\n");
+    console.log( "discord-afk-js outdated version, please update to latest version");
+    console.log("\x1b[34m" + `|                ${notifier.update}                  |`);
+    console.log("\n\n");
+};
 
 module.exports = {
   afk,
