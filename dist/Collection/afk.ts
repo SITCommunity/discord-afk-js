@@ -1,4 +1,5 @@
 import { Collection } from '@discordjs/collection';
+import { default as searchForNewUpdate } from '../function/version';
 
 /**
  * discord-afk-js package for more easy to make afk command without db (database)
@@ -12,6 +13,8 @@ const afk = new Collection<any, any>();
  * that you are currently using.
  */
 declare const version: string;
+
+searchForNewUpdate({ state: true });
 
 export { afk, version };
 //# sourceMappingURL=afk.ts.map

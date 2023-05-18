@@ -1,2 +1,2 @@
-export { afk, version } from "./Collection/afk";
+export { afk, version } from "./collection/afk";
 //# sourceMappingURL=index.d.ts.map
