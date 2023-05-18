@@ -33,7 +33,9 @@
   },
   "homepage": "https://github.com/CyraTeam/discord-afk-js#readme",
   "dependencies": {
-    "node-fetch": "^2.6.11"
+    "@types/update-notifier": "^6.0.2",
+    "node-fetch": "^2.6.11",
+    "update-notifier": "^5.1.0"
   },
   "devDependencies": {
     "@discordjs/collection": "^1.5.0",
@@ -42,8 +44,7 @@
     "grunt": "^1.6.1",
     "grunt-contrib-jshint": "^3.2.0",
     "grunt-contrib-nodeunit": "^5.0.0",
-    "grunt-contrib-uglify": "^5.2.2",
-    "update-notifier": "^5.1.0"
+    "grunt-contrib-uglify": "^5.2.2"
   },
   "nano-staged": {
     "*.ts": [
