@@ -87,6 +87,11 @@ client.on(Events.MessageCreate, async(message) => {
 });
 ```
 
+## Changelog
+- added collection to afk system
+- removed unused files / code
+- added update notifier
+
 ## Join our Discord server
   <a href="https://discord.gg/qpT2AeYZRN" target="_blank"><img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord"></a>
 

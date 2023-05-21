@@ -1,1 +1,0 @@
-export { afk } from "./Collection/afk";

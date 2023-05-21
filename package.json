@@ -1,9 +1,10 @@
 {
   "name": "discord-afk-js",
-  "version": "1.3.8",
+  "version": "1.4.3",
   "description": "discord-afk-js package for more easy to make afk command without db (database)",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -32,10 +33,13 @@
   },
   "homepage": "https://github.com/CyraTeam/discord-afk-js#readme",
   "dependencies": {
-    "node-fetch": "^3.3.1"
+    "@types/update-notifier": "^6.0.2",
+    "node-fetch": "^2.6.11",
+    "update-notifier": "^5.1.0"
   },
   "devDependencies": {
     "@discordjs/collection": "^1.5.0",
+    "@vercel/analytics": "^1.0.1",
     "discord.js": "^14.9.0",
     "grunt": "^1.6.1",
     "grunt-contrib-jshint": "^3.2.0",
