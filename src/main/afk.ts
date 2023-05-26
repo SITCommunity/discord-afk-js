@@ -1,5 +1,3 @@
-import { default as updateNotifier } from 'update-notifier';
-import packages from '../../package.json' assert { type: 'json' };
 import { AfkCollection } from '../../dist/main/afkcollection';
 
 //afk collection
@@ -16,11 +14,6 @@ const afk = new AfkCollection<any, any>();
  * that you are currently using.
  */
 declare const version: string;
-
-//notifier update package
-const notifier = updateNotifier({ pkg: packages, updateCheckInterval: 1000 * 60 * 60 * 24 })
-notifier.notify();
-console.log(notifier.update);
 
 export { afk, version };
 //# sourceMappingURL=afk.ts.map

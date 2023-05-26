@@ -35,8 +35,8 @@ npm i discord-afk-js
 ```js
 const { afk } = require('discord-afk-js');
 const reason = args.join(' ') || 'No Reason';
-afk.set(message.author.id, [Date.now(), reason]);
-message.reply(`set afk to ${message.member}, Reason: ${reason}`);
+afk.add(message.author.id, [Date.now(), reason]);
+message.reply(`${message.member} now afk!\nReason: ${reason}`);
 ```
 
 ## More Example
@@ -48,15 +48,15 @@ const moment = require('moment');
 
 client.on(Events.MessageCreate, async(message) => {
   const member = message.mentions.members.first();
-  const data = afk.get(member.id);
+  const data = afk.search(member.id);
   if(data) {
     const [timestamp, reason] = data;
     const timeago = moment(timestamp).fromNow();
     message.reply(`${member} afk right now, Reason: ${reason} ${timeago}`)
   };
-  const getdata afk.get(message.author.id);
+  const getdata = afk.search(message.author.id);
   if(getdata) {
-    afk.delete(message.author.id);
+    afk.remove(message.author.id);
     message.reply(`${message.member} removed you from afk`);
   };
 });
@@ -71,32 +71,39 @@ module.exports = {
 
   run: async(client, message, args) => {
     const reason = args.join(' ') || 'No Reason';
-    afk.set(message.author.id, [Date.now(), reason]);
-    message.reply(`set afk to ${message.member}, Reason: ${reason}`);
+    afk.add(message.author.id, [Date.now(), reason]);
+    message.reply(`${message.member} now afk!\nReason: ${reason}`);
   },
 };
 
-//example without events
+//example without using events
 const { Events } = require('discord.js');
 const { afk } = require('discord-afk-js');
 
 client.on(Events.MessageCreate, async(message) => {
   const reason = args.join(' ') || 'No Reason';
-  afk.set(message.author.id, [Date.now(), reason]);
-  message.reply(`set afk to ${message.member}, Reason: ${reason}`);
+  afk.add(message.author.id, [Date.now(), reason]);
+  message.reply(`${message.member} now afk!\nReason: ${reason}`);
 });
 ```
 
-## Changelog
-- added collection to afk system
-- removed unused files / code
-- added update notifier
+# Changelog | Migrating to discord-afk-js
+
+```diff
+- update notifier
+
+- afk.add();
++ afk.set();
+
+- afk.delete();
++ afk.remove();
+
+- afk.get();
++ afk.search();
+```
 
 ## Join our Discord server
   <a href="https://discord.gg/qpT2AeYZRN" target="_blank" rel="noopener noreferrer"><img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord"></a>
-
-## Staff
-- [@brokenedtzjs](https://github.com/brokenedtzjs) Founder discord-afk-js
 
 ## License & Copyright
 ```
