@@ -1,4 +1,6 @@
 import { AfkCollection } from '../../dist/main/afkcollection';
+import updateNotifier from 'update-notifier';
+import packages from '../../package.json' assert { type: 'json' };
 
 //afk collection
 /**
@@ -14,6 +16,13 @@ const afk = new AfkCollection<any, any>();
  * that you are currently using.
  */
 declare const version: string;
+const notifier = updateNotifier({ pkg: packages });
+if(notifier.update) {
+  console.log("\n\n");
+  console.log( "discord-afk-js outdated version detected, please update to latest version");
+  console.log("\x1b[34m" + `|                ${notifier.update.current} -> ${notifier.update.latest}                  |`);
+  console.log("\n\n");
+};
 
 export { afk, version };
 //# sourceMappingURL=afk.ts.map
