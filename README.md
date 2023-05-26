@@ -90,8 +90,6 @@ client.on(Events.MessageCreate, async(message) => {
 # Changelog | Migrating to discord-afk-js
 
 ```diff
-- update notifier
-
 - afk.add();
 + afk.set();
 
