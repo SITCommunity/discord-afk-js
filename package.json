@@ -1,12 +1,12 @@
 {
   "name": "discord-afk-js",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "discord-afk-js package for more easy to make afk command without db (database)",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
