@@ -18,9 +18,6 @@
 # discord-afk-js
 [discord-afk-js](https://github.com/CyraTeam/discord-afk-js) package for more easy to make afk command without db (database)
 
-## discord-afk-js Powered by
-- [@discordjs/collections](https://github.com/discordjs/discord.js)
-
 ## Install
 - NPM
 ```
@@ -35,7 +32,7 @@ npm i discord-afk-js
 ```js
 const { afk } = require('discord-afk-js');
 const reason = args.join(' ') || 'No Reason';
-afk.add(message.author.id, [Date.now(), reason]);
+afk.set(message.author.id, [Date.now(), reason]);
 message.reply(`${message.member} now afk!\nReason: ${reason}`);
 ```
 
@@ -48,15 +45,15 @@ const moment = require('moment');
 
 client.on(Events.MessageCreate, async(message) => {
   const member = message.mentions.members.first();
-  const data = afk.search(member.id);
+  const data = afk.get(member.id);
   if(data) {
     const [timestamp, reason] = data;
     const timeago = moment(timestamp).fromNow();
     message.reply(`${member} afk right now, Reason: ${reason} ${timeago}`)
   };
-  const getdata = afk.search(message.author.id);
+  const getdata = afk.get(message.author.id);
   if(getdata) {
-    afk.remove(message.author.id);
+    afk.delete(message.author.id);
     message.reply(`${message.member} removed you from afk`);
   };
 });
@@ -71,7 +68,7 @@ module.exports = {
 
   run: async(client, message, args) => {
     const reason = args.join(' ') || 'No Reason';
-    afk.add(message.author.id, [Date.now(), reason]);
+    afk.set(message.author.id, [Date.now(), reason]);
     message.reply(`${message.member} now afk!\nReason: ${reason}`);
   },
 };
@@ -82,7 +79,7 @@ const { afk } = require('discord-afk-js');
 
 client.on(Events.MessageCreate, async(message) => {
   const reason = args.join(' ') || 'No Reason';
-  afk.add(message.author.id, [Date.now(), reason]);
+  afk.set(message.author.id, [Date.now(), reason]);
   message.reply(`${message.member} now afk!\nReason: ${reason}`);
 });
 ```
@@ -90,14 +87,14 @@ client.on(Events.MessageCreate, async(message) => {
 # Changelog | Migrating to discord-afk-js
 
 ```diff
-- afk.add();
 + afk.set();
+- afk.add();
 
-- afk.delete();
-+ afk.remove();
++ afk.delete();
+- afk.remove();
 
-- afk.get();
-+ afk.search();
++ afk.get();
+- afk.search();
 ```
 
 ## Join our Discord server
