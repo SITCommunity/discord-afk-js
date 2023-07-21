@@ -100,6 +100,15 @@ client.on(Events.MessageCreate, async(message) => {
 ## Join our Discord server
   <a href="https://discord.gg/qpT2AeYZRN" target="_blank" rel="noopener noreferrer"><img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord"></a>
 
+## Advertising
+<div align="center">
+  <p>
+  <a>CyraBot</a>
+  <a>need security bot for your discord servers? listening music?</a>
+  <a>all you need on here</a>
+  <a>[Website](https://www.cyrabot.my.id/) | [Invite](https://www.cyrabot.my.id/invite/)
+</div>
+
 ## License & Copyright
 ```
 This Project under MIT License
