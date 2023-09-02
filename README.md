@@ -106,7 +106,8 @@ client.on(Events.MessageCreate, async(message) => {
   <a>CyraBot</a>
   <a>need security bot for your discord servers? listening music?</a>
   <a>all you need on here</a>
-  <a>[Website](https://www.cyrabot.my.id/) | [Invite](https://www.cyrabot.my.id/invite/)
+  <a href="https://www.cyrabot.my.id/">Website</a> | <a href="https://www.cyrabot.my.id/invite/">Invite</a>
+  <img src="https://cdn.discordapp.com/attachments/1038704467828281346/1090882515205619792/cyrabot.gif"></img>
 </div>
 
 ## License & Copyright
