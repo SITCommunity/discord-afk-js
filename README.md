@@ -101,5 +101,5 @@ client.on(Events.MessageCreate, async(message) => {
 ## License & Copyright
 ```
 This Project under MIT License
-Copyright (c) 2023-present CyraTeam
+© 2019 - 2023 CyraTeam. All Rights Reserved
 ```
