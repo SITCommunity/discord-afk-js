@@ -19,7 +19,7 @@ const checkUpdate = async () => {
             };
             const msg = {
                 updateAvailable: `${ptch} update available ${chalk.dim.red(version)} → ${chalk.green(latestVersion)}`,
-                runUpdate: `Run ${chalk.cyanBright(`npm i -g ${name}`)} to update`,
+                runUpdate: `Run ${chalk.cyanBright(`npm i ${name}@latest`)} to update`,
             };
             console.log(boxen(`${msg.updateAvailable}\n${msg.runUpdate}`, {
                 title: 'update detected',
@@ -39,6 +39,7 @@ const checkUpdate = async () => {
  * click this for example about {@link https://github.com/CyraTeam/discord-afk-js/#readme | discord-afk-js} package
  */
 const afk = new AfkCollections<any, any>();
+checkUpdate();
 
 export { afk, versions };
 //# sourceMappingURL=afk.ts.map

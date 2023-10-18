@@ -1,6 +1,6 @@
 {
   "name": "discord-afk-js",
-  "version": "1.4.9",
+  "version": "1.5.0",
   "description": "discord-afk-js package for more easy to make afk command without db (database)",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
