@@ -16,7 +16,7 @@
 </div>
 
 # discord-afk-js
-[discord-afk-js](https://github.com/CyraTeam/discord-afk-js) package for more easy to make afk command without db (database)
+[discord-afk-js](https://github.com/CyraTeam/discord-afk-js) package is a convenient tool for creating AFK commands without the need for a database
 
 ## Install
 - NPM
@@ -93,7 +93,7 @@ client.on(Events.MessageCreate, async(message) => {
 
 + added update notifier
 ```
-<img src="https://cdn.discordapp.com/attachments/1038704467828281346/1164087900028276816/update_notifier.png?ex=6541f057&is=652f7b57&hm=930a77f1c5d00e42d99c2b6e516e75c544f6c6a2a97eb04faf5e20a26bc4a4cd&"></img>
+<img src="https://cdn.discordapp.com/attachments/1038704467828281346/1164094445944320030/update_notifier.png?ex=6541f66f&is=652f816f&hm=a984a0e94a3f30b7e6a50346d04b30b7ce6a43940c59343a948a34fa130109a9&"></img>
 
 ## Join our Discord server
   <a href="https://discord.gg/qpT2AeYZRN" target="_blank" rel="noopener noreferrer"><img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord"></a>

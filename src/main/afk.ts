@@ -7,29 +7,31 @@ import semverDiff from 'semver-diff';
 import { name, version } from '../../package.json';
 
 const checkUpdate = async () => {
-    const { version: latestVersion } = await pkgJson(name).catch(e => { throw new Error(e) });
+    const { version: latestVersion } = await pkgJson(name).catch(e => {
+        throw new TypeError(e);
+    });
     const updateAvailable = semver.lt(version, latestVersion as string);
 
     if (updateAvailable) {
         try {
-            let ptch = '';
-            let verDiff = semverDiff(version, latestVersion as string);
+            const verDiff = semverDiff(version, latestVersion as string);
             if (verDiff) {
-                ptch = 'Patch';
+                const msg = {
+                    updateAvailable: `new update available ${chalk.dim.red(version)} → ${chalk.green(latestVersion)}`,
+                    runUpdate: `Run ${chalk.cyanBright(`npm i ${name}@latest`)} to update`,
+                };
+                console.log(boxen(`${msg.updateAvailable}\n${msg.runUpdate}`, {
+                    title: 'update detected',
+                    borderColor: 'magentaBright',
+                    margin: 1,
+                    padding: 1,
+                    textAlignment: 'center',
+                    align: 'center',
+                }));
             };
-            const msg = {
-                updateAvailable: `${ptch} update available ${chalk.dim.red(version)} → ${chalk.green(latestVersion)}`,
-                runUpdate: `Run ${chalk.cyanBright(`npm i ${name}@latest`)} to update`,
-            };
-            console.log(boxen(`${msg.updateAvailable}\n${msg.runUpdate}`, {
-                title: 'update detected',
-                borderColor: 'magentaBright',
-                margin: 1,
-                padding: 1,
-                textAlignment: 'center',
-                align: 'center',
-            }));
-        } catch (e) { throw new Error(e) };
+        } catch (e) {
+            throw new TypeError(e);
+        };
     };
 };
 

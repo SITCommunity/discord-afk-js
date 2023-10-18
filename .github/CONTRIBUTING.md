@@ -1,6 +1,6 @@
 # Contributing
 
-**The issue tracker is only for bug reports. If you have a question or an enhancement suggestion, please post it in [GitHub Discussions (preferred)](https://github.com/CyraTeam/discord-afk-js/discussions) or the [discord-afk-js Support Server](https://cyrabot.groups.id/discord/) instead of opening an issue.**
+**The issue tracker is only for bug reports. If you have a question or an enhancement suggestion, please post it in [GitHub Discussions (preferred)](https://github.com/CyraTeam/discord-afk-js/discussions) or the [discord-afk-js Support Server](https://www.cyrabot.my.id/discord/) instead of opening an issue.**
 
 If you wish to contribute to discord-afk-js, feel free to fork the repository and submit a pull request.
 
@@ -15,5 +15,5 @@ If you wish to contribute to discord-afk-js, feel free to fork the repository an
 2. Run `npm build`
 
 ## Final
-- [Submit a pull request](https://github.com/CyraTeam/discord-afk-js/compare) and the staff will check the code)
+- [Submit a pull request](https://github.com/CyraTeam/discord-afk-js/compare) and the staff will check the code
 - after the check we will comfirm the code will be added to the package or no
