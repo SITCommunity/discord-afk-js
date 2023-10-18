@@ -93,7 +93,7 @@ client.on(Events.MessageCreate, async(message) => {
 + added update notifier
 + added error handling
 ```
-<img src="https://cdn.discordapp.com/attachments/1038704467828281346/1164099747913666601/update_notifier.png?ex=6541fb5f&is=652f865f&hm=6e478ba02b149d1f35725f80340d9b28eb2cdeb0e7e5632cdfe081c583f6b473&"></img>
+<div align="center"><img src="https://cdn.discordapp.com/attachments/1038704467828281346/1164099747913666601/update_notifier.png?ex=6541fb5f&is=652f865f&hm=6e478ba02b149d1f35725f80340d9b28eb2cdeb0e7e5632cdfe081c583f6b473&"></img></div>
 
 ## Join our Discord server
   <a href="https://discord.gg/qpT2AeYZRN" target="_blank" rel="noopener noreferrer"><img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord"></a>
