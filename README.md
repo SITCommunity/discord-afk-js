@@ -90,10 +90,10 @@ client.on(Events.MessageCreate, async(message) => {
 - removing unused depencies
 
 + fix known security major
-
 + added update notifier
++ added error handling
 ```
-<img src="https://cdn.discordapp.com/attachments/1038704467828281346/1164094445944320030/update_notifier.png?ex=6541f66f&is=652f816f&hm=a984a0e94a3f30b7e6a50346d04b30b7ce6a43940c59343a948a34fa130109a9&"></img>
+<img src="https://cdn.discordapp.com/attachments/1038704467828281346/1164099747913666601/update_notifier.png?ex=6541fb5f&is=652f865f&hm=6e478ba02b149d1f35725f80340d9b28eb2cdeb0e7e5632cdfe081c583f6b473&"></img>
 
 ## Join our Discord server
   <a href="https://discord.gg/qpT2AeYZRN" target="_blank" rel="noopener noreferrer"><img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord"></a>
