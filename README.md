@@ -87,15 +87,13 @@ client.on(Events.MessageCreate, async(message) => {
 # Changelog | Migrating to discord-afk-js
 
 ```diff
-+ afk.set();
-- afk.add();
+- removing unused depencies
 
-+ afk.delete();
-- afk.remove();
++ fix known security major
 
-+ afk.get();
-- afk.search();
++ added update notifier
 ```
+<img src="https://cdn.discordapp.com/attachments/1038704467828281346/1164047811495608320/update_notifier.png?ex=6541cb01&is=652f5601&hm=8eed392559360abcd43adb75db184fd93b4d923b5b78aad5254425d5c9209946&"></img>
 
 ## Join our Discord server
   <a href="https://discord.gg/qpT2AeYZRN" target="_blank" rel="noopener noreferrer"><img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord"></a>
