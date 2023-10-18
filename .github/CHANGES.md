@@ -1,15 +1,9 @@
 # Changes
 
 ```diff
-+ afk.add();
-- afk.set();
-  -> afk.add(); => afk.set();
+- removing unused depencies
 
-+ afk.delete();
-- afk.remove();
-  -> afk.delete(); => afk.remove();
++ fix known security major
 
-+ afk.get();
-- afk.search();
-  -> afk.get(); => afk.search();
++ added update notifier
 ```
