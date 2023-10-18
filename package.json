@@ -50,6 +50,6 @@
     "chalk": "^4.1.2",
     "package-json": "^7.0.0",
     "semver": "^7.5.4",
-    "semver-diff": "^3.1.1"
+    "semver-diff": "^4.0.0"
   }
 }
