@@ -5,10 +5,11 @@ import semver from 'semver';
 import pkgJson from 'package-json';
 import semverDiff from 'semver-diff';
 import { name, version } from '../../package.json';
+import AfkError from '../../lib/error/AfkError';
 
 const checkUpdate = async () => {
     const { version: latestVersion } = await pkgJson(name).catch(e => {
-        throw new TypeError(e);
+        throw new AfkError(e);
     });
     const updateAvailable = semver.lt(version, latestVersion as string);
 
@@ -30,18 +31,11 @@ const checkUpdate = async () => {
                 }));
             };
         } catch (e) {
-            throw new TypeError(e);
+            throw new AfkError(e);
         };
     };
 };
-
-/**
- * discord-afk-js package for more easy to make afk command without db (database)
- *
- * click this for example about {@link https://github.com/CyraTeam/discord-afk-js/#readme | discord-afk-js} package
- */
-const afk = new AfkCollections<any, any>();
 checkUpdate();
 
-export { afk, versions };
+export { AfkCollections, versions };
 //# sourceMappingURL=afk.ts.map
