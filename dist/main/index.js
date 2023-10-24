@@ -1,4 +1,11 @@
-"use strict";
+/**
+ * @author brokenedtzjs
+ * @license MIT-License
+ * @copyright brokenedtzjs
+ * @file index.js
+ */
+
+'use strict';
 
 // Import the AfkError class for error handling
 const AfkError = require("../../lib/error/AfkError");

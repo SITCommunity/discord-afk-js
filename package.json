@@ -53,7 +53,6 @@
     "semver-diff": "^3.1.1"
   },
   "devDependencies": {
-    "discord-afk-js": "^1.5.0",
     "jest": "^29.7.0",
     "moment": "^2.29.4"
   }

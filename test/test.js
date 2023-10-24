@@ -1,4 +1,4 @@
-const { AfkCollections, versions } = require("../dist/index");
+const { AfkCollections, versions } = require("../dist/main");
 
 test("add function", () => {
   // 1

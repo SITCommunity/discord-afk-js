@@ -1,4 +1,4 @@
-import { AfkCollections, versions } from '../../dist/main/collection';
+import { AfkCollections, versions } from '../../dist/main';
 import boxen from 'boxen';
 import chalk from 'chalk';
 import semver from 'semver';
