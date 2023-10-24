@@ -32,29 +32,32 @@ npm install discord-afk-js
 
 ```javascript
 const { AfkCollections } = require('discord-afk-js');
+const moment = require('moment');
 
 // Create an instance of AfkCollections
 const afk = new AfkCollections();
 
-// Adding a user to AFK status
-afk.addUser('user123', 'I am currently AFK');
-// or
-afk.addUser('user123', [Date.now(), 'I am currently AFK');
+// Checking if a user is AFK without time
+const reason = args.join(' ') || 'No Reason';
+afk.addUser('user123', reason);
 
-// Checking if a user is AFK
 if (afk.findUser('user123')) {
-  console.log('User is marked as AFK');
-  console.log('AFK Message:', afk.afkMessage('user123'));
+  console.log('User is marked as AFK'); // console: User is marked as AFK
+  console.log('AFK Message:', afk.afkMessage('user123')); // console: AFK Message: No Reason
 }
 // or
+// Adding a user to AFK status with time
+const reason = args.join(' ') || 'No Reason';
+afk.addUser('user123', [Date.now(), reason);
+
 if (afk.findUser('user123')) {
-  console.log('User is marked as AFK');
+  console.log('User is marked as AFK'); // console: User is marked as AFK
   const data = afk.findMessage('user123');
 
   const [ time, reason ] = data;
   const timeago = moment(time).fromNow();
 
-  console.log('AFK Message:', `${reason} ${timeago}`);
+  console.log('AFK Message:', `${reason} ${timeago}`); // console: AFK Message: No Reason a few seconds ago
 }
 
 // Removing a user from AFK status
@@ -67,13 +70,12 @@ The **discord-afk-js** library provides a set of methods for working with AFK st
 
 # Changelog | Migrating to discord-afk-js
 ```diff
-- removing unused depencies
-
-+ fix known security major
-+ added update notifier
-+ added error handling
++ change afk to AfkCollections for import
++ afk.set() -> afk.addUser()
++ afk.delete() -> afk.removeUser()
++ afk.get() -> afk.findUser()
++ afk.findMessage()
 ```
-<div align="center"><img src="https://cdn.discordapp.com/attachments/1038704467828281346/1164099747913666601/update_notifier.png?ex=6541fb5f&is=652f865f&hm=6e478ba02b149d1f35725f80340d9b28eb2cdeb0e7e5632cdfe081c583f6b473&"></img></div>
 
 # License
 This project is open-source and is licensed under the MIT License. You can find more details about the license in the [LICENSE.md](https://github.com/CyraTeam/discord-afk-js/blob/main/LICENSE) file included in the project.
