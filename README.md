@@ -38,11 +38,23 @@ const afk = new AfkCollections();
 
 // Adding a user to AFK status
 afk.addUser('user123', 'I am currently AFK');
+// or
+afk.addUser('user123', [Date.now(), 'I am currently AFK');
 
 // Checking if a user is AFK
 if (afk.findUser('user123')) {
   console.log('User is marked as AFK');
   console.log('AFK Message:', afk.afkMessage('user123'));
+}
+// or
+if (afk.findUser('user123')) {
+  console.log('User is marked as AFK');
+  const data = afk.findMessage('user123');
+
+  const [ time, reason ] = data;
+  const timeago = moment(time).fromNow();
+
+  console.log('AFK Message:', `${reason} ${timeago}`);
 }
 
 // Removing a user from AFK status
@@ -54,7 +66,6 @@ In the code snippet above, we start by importing the **AfkCollections** class. A
 The **discord-afk-js** library provides a set of methods for working with AFK status using the **AfkCollections** class.
 
 # Changelog | Migrating to discord-afk-js
-
 ```diff
 - removing unused depencies
 
