@@ -11,6 +11,8 @@
     <a href="https://github.com/CyraTeam/discord-afk-js" target="_blank" rel="noopener noreferrer"><img alt="Visitor" src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FCyraTeam%2Fdiscord-afk-js&countColor=%2337d67a&style=flat"></a>
     <a href="https://github.com/CyraTeam/discord-afk-js/issues" target="_blank" rel="noopener noreferrer"><img alt="Issues" src="https://img.shields.io/github/issues/CyraTeam/discord-afk-js"></a>
     <a href="https://github.com/CyraTeam/discord-afk-js" target="_blank" rel="noopener noreferrer"><img alt="Commit" src="https://img.shields.io/github/commit-activity/y/CyraTeam/discord-afk-js?label=Commit%20Activity&logo=github"></a>
+    <a href="https://codecov.io/gh/CyraTeam/discord-afk-js"><img src="https://codecov.io/gh/CyraTeam/discord-afk-js/graph/badge.svg?token=98ZKDNNXVE"/></a> 
+ </a>
   </p>
 </div>
 
