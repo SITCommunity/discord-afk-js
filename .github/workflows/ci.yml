@@ -10,6 +10,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Cd To Path
+        run: cd nodb-stable
       - name: Install dependencies
         run: npm install
       - name: Run tests and collect coverage
