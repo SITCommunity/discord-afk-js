@@ -24,7 +24,9 @@
     "discord.js",
     "afks",
     "afk",
-    "discord-afk-js"
+    "discord-afk-js",
+    "database",
+    "db"
   ],
   "author": "brokenedtz",
   "license": "MIT",

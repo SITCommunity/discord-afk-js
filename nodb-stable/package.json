@@ -1,0 +1,61 @@
+{
+  "name": "discord-afk-js",
+  "version": "1.5.2",
+  "description": "discord-afk-js package is a convenient tool for creating AFK commands without the need for a database",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CyraTeam/discord-afk-js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "discord",
+    "discord-afk",
+    "bot",
+    "bots",
+    "discord-bot",
+    "discord.js",
+    "afks",
+    "afk",
+    "discord-afk-js",
+    "nodatabase",
+    "nodb"
+  ],
+  "author": "brokenedtz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CyraTeam/discord-afk-js/issues"
+  },
+  "homepage": "https://github.com/CyraTeam/discord-afk-js#readme",
+  "nano-staged": {
+    "*.ts": [
+      "prettier --write",
+      "eslint"
+    ],
+    "*.{json,yml,yaml,md}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=16.9.0"
+  },
+  "packageManager": "yarn@3.2.0",
+  "dependencies": {
+    "boxen": "^5.1.2",
+    "chalk": "^4.1.2",
+    "package-json": "^7.0.0",
+    "semver": "^7.5.4",
+    "semver-diff": "^3.1.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "moment": "^2.29.4"
+  }
+}
