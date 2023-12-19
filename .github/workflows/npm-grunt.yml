@@ -1,3 +1,4 @@
+#nodb check
 name: NodeJS with Grunt
 
 on:
