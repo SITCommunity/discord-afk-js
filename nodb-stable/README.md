@@ -30,14 +30,14 @@ npm install discord-afk-js
 ```
 
 # Usage
-**discord-afk-js** offers a straightforward way to manage AFK users in your Discord bot. Below is an example of how to utilize the **AfkCollections** class:
+**discord-afk-js** offers a straightforward way to manage AFK users in your Discord bot. Below is an example of how to utilize the **AfkClient** class:
 
 ```javascript
-const { AfkCollections } = require('discord-afk-js');
+const { AfkClient } = require('discord-afk-js');
 const moment = require('moment');
 
-// Create an instance of AfkCollections
-const afk = new AfkCollections();
+// Create an instance of AfkClient
+const afk = new AfkClient();
 
 // Checking if a user is AFK without time
 const reason = args.join(' ') || 'No Reason';
@@ -50,7 +50,7 @@ if (afk.findUser('user123')) {
 // or
 // Adding a user to AFK status with time
 const reason = args.join(' ') || 'No Reason';
-afk.addUser('user123', [Date.now(), reason);
+afk.addUser('user123', [Date.now(), reason]);
 
 if (afk.findUser('user123')) {
   console.log('User is marked as AFK'); // console: User is marked as AFK
@@ -65,14 +65,14 @@ if (afk.findUser('user123')) {
 // Removing a user from AFK status
 afk.removeUser('user123');
 ```
-In the code snippet above, we start by importing the **AfkCollections** class. After creating an instance of this class, we demonstrate how to add a user to the AFK list, check their AFK status, and remove them from AFK status.
+In the code snippet above, we start by importing the **AfkClient** class. After creating an instance of this class, we demonstrate how to add a user to the AFK list, check their AFK status, and remove them from AFK status.
 
 # API
-The **discord-afk-js** library provides a set of methods for working with AFK status using the **AfkCollections** class.
+The **discord-afk-js** library provides a set of methods for working with AFK status using the **AfkClient** class.
 
 # Changelog | Migrating to discord-afk-js
 ```diff
-+ change afk to AfkCollections for import
++ change afk to AfkClient for import
 + afk.set() -> afk.addUser()
 + afk.delete() -> afk.removeUser()
 + afk.get() -> afk.findUser()
@@ -80,7 +80,7 @@ The **discord-afk-js** library provides a set of methods for working with AFK st
 ```
 
 # License
-This project is open-source and is licensed under the MIT License. You can find more details about the license in the [LICENSE.md](https://github.com/CyraTeam/discord-afk-js/blob/main/LICENSE) file included in the project.
+This project is open-source and is licensed under the Apache 2.0 License. You can find more details about the license in the [LICENSE.md](https://github.com/CyraTeam/discord-afk-js/blob/main/LICENSE) file included in the project.
 
 With this comprehensive readme, you have a clear and detailed guide on how to use the **discord-afk-js** library to manage AFK status in your Discord bot.
 

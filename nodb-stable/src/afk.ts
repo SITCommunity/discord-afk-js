@@ -1,16 +1,14 @@
-import { AfkCollections, versions } from '../../dist/main';
+import { AfkClient, versions } from '../dist';
 import boxen from 'boxen';
 import chalk from 'chalk';
 import semver from 'semver';
 import pkgJson from 'package-json';
 import semverDiff from 'semver-diff';
-import { name, version } from '../../package.json';
-import AfkError from '../../lib/error/AfkError';
+import { name, version } from '../package.json';
+import AfkError from '../lib/error/AfkError';
 
 const checkUpdate = async () => {
-    const { version: latestVersion } = await pkgJson(name).catch(e => {
-        throw new AfkError(e);
-    });
+    const { version: latestVersion } = await pkgJson(name);
     const updateAvailable = semver.lt(version, latestVersion as string);
 
     if (updateAvailable) {
@@ -37,5 +35,5 @@ const checkUpdate = async () => {
 };
 checkUpdate();
 
-export { AfkCollections, versions };
+export { AfkClient, versions };
 //# sourceMappingURL=afk.ts.map

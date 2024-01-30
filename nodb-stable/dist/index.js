@@ -1,23 +1,24 @@
 /**
  * @author brokenedtzjs
- * @license MIT-License
+ * @license Apache-2.0
  * @copyright brokenedtzjs
  * @file index.js
  */
 
 'use strict';
 
-// Import the AfkError class for error handling
-const AfkError = require("../../lib/error/AfkError");
-const AfkTypeError = require("../../lib/error/AfkTypeError");
+// =================================================================
+
+const AfkError = require("../lib/error/AfkError");
+const AfkTypeError = require("../lib/error/AfkTypeError");
 const boxen = require("boxen");
 const chalk = require("chalk");
 const semver = require("semver");
 const pkgJson = require("package-json");
 const semverDiff = require("semver-diff");
-const { name, version } = require("../../package.json");
+const { name, version } = require("../package.json");
 
-// Define utility functions for property handling
+// =================================================================
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -41,20 +42,14 @@ var __copyProps = (to, from, except, desc) => {
 };
 var __toCommonJS = (mod) =>
   __copyProps(__defProp({}, "__esModule", { value: true }), mod);
-
-// Create an exportable object for src/index.ts
 var src_exports = {};
 __export(src_exports, {
-  AfkCollections: () => AfkCollections,
+  AfkClient: () => AfkClient,
 });
-
-// Export the object as a CommonJS module
 module.exports = __toCommonJS(src_exports);
-
-// Define the AfkCollections class for managing AFK users
-class AfkCollections {
+// =================================================================
+class AfkClient {
   constructor() {
-    // Initialize a Map to store user data
     this.users = new Map();
   }
 
@@ -118,11 +113,8 @@ class AfkCollections {
     return this.users.get(userId);
   }
 }
-
-// Assign a name to the AfkCollections class
-__name(AfkCollections, "AfkCollections");
-
-// update notifier
+__name(AfkClient, "AfkClient");
+// =================================================================
 const checkUpdate = async () => {
   try {
     const { version: latestVersion } = await pkgJson(name);
@@ -156,14 +148,13 @@ const checkUpdate = async () => {
   }
 };
 checkUpdate();
-
-// Define the library version
-var versions = `${require("../../package.json").version}`;
-
-// Annotate the CommonJS export names for ESM import in node.
+// =================================================================
+var versions = `${require("../package.json").version}`;
+// =================================================================
 0 &&
   (module.exports = {
-    AfkCollections,
+    AfkClient,
     versions,
   });
+// =================================================================
 //# sourceMappingURL=index.js.map

@@ -1,27 +1,26 @@
-const { AfkCollections, versions } = require("../dist/main");
+const { AfkClient, versions } = require("../dist");
 
-test("add function", () => {
+test("add function", async () => {
   // 1
-  const afks = new AfkCollections();
+  const afks = new AfkClient();
 
-  afks.addUser("user123", "test");
-  const user = afks.findUser('user123');
+  afks.addUser("12345678", "test");
+  const user = afks.findUser('12345678');
 
-  console.log("AFK Message:", `${afks.findMessage("user123")}`);
-  afks.removeUser('user123');
+  console.log("AFK Message:", `${afks.findMessage("12345678")}`);
+  afks.removeUser('12345678');
 
   // 2
-  const afk = new AfkCollections();
+  const afk = new AfkClient();
   const moment = require("moment");
 
-  afk.addUser('user123', [Date.now(), "test"]);
-  const users = afk.findUser('user123');
-  const [ time, reason ] = afk.findMessage("user123");
+  afk.addUser('12345678', [Date.now(), "test"]);
+  const users = afk.findUser('12345678');
+  const [ time, reason ] = afk.findMessage("12345678");
 
   const timeago = moment(time).fromNow();
 
   console.log("AFK Message:", `${users} ${reason} ${timeago}`);
-  afk.removeUser('user123');
-
+  afk.removeUser('12345678');
   console.log(versions);
 });

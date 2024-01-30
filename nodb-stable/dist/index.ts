@@ -3,17 +3,17 @@ import chalk from 'chalk';
 import semver from 'semver';
 import pkgJson from 'package-json';
 import semverDiff from 'semver-diff';
-import { name, version } from '../../package.json';
-import AfkError from '../../lib/error/AfkError';
+import AfkError from '../lib/error/AfkError';
+import { name, version } from '../package.json';
 
 /**
  * @internal
  */
 interface AfkConstructor {
-    new(): AfkCollections;
-    new <K, V>(entries?: readonly (readonly [K, V])[] | null): AfkCollections;
-    new <K, V>(iterable: Iterable<readonly [K, V]>): AfkCollections;
-    readonly prototype: AfkCollections;
+    new(): AfkClient;
+    new <K, V>(entries?: readonly (readonly [K, V])[] | null): AfkClient;
+    new <K, V>(iterable: Iterable<readonly [K, V]>): AfkClient;
+    readonly prototype: AfkClient;
     readonly [Symbol.species]: AfkConstructor;
 }
 
@@ -22,7 +22,7 @@ interface AfkConstructor {
  *
  * @internal
  */
-interface AfkCollections {
+interface AfkClient {
     constructor: AfkConstructor;
 }
 
@@ -37,7 +37,7 @@ interface AfkCollections {
  * ```
  * npm install discord-afk-js
  * ```
- * Once installed, you can import and use the `AfkCollections` class to manage AFK users in your bot.
+ * Once installed, you can import and use the `AfkClient` class to manage AFK users in your bot.
  * 
  * ## Features
  * - Efficient AFK user management.
@@ -53,10 +53,10 @@ interface AfkCollections {
  * Here's an example of how to get started with `discord-afk-js`:
  * 
  * ```javascript
- * const { AfkCollections } = require('discord-afk-js');
+ * const { AfkClient } = require('discord-afk-js');
  * 
- * // Create a new instance of AfkCollections
- * const afk = new AfkCollections();
+ * // Create a new instance of AfkClient
+ * const afk = new AfkClient();
  * 
  * // Add a user to AFK status
  * afk.addUser("user123", "Away from keyboard");
@@ -77,10 +77,10 @@ interface AfkCollections {
  * `discord-afk-js` allows you to customize the behavior to suit your bot's needs. You can implement your own logic for AFK management on top of the provided collection.
  * 
  * ```javascript
- * const { AfkCollections } = require('discord-afk-js');
+ * const { AfkClient } = require('discord-afk-js');
  * 
  * // Create a custom AFK collection with a different behavior
- * class CustomAfkCollection extends AfkCollections {
+ * class CustomAfkCollection extends AfkClient {
  *   // Implement custom methods or overrides here
  * }
  * 
@@ -102,7 +102,12 @@ interface AfkCollections {
  * ## Compatibility
  * `discord-afk-js` is compatible with various Discord bot frameworks and libraries, making it a versatile choice for AFK management in your bot.
  */
-declare class AfkCollections {
+declare class AfkClient {
+    name: string;
+    version: string;
+
+    constructor();
+
     clear(): void;
 
     /**
@@ -113,9 +118,9 @@ declare class AfkCollections {
      * 
      * @example
      * ```javascript
-     * const { AfkCollections } = require('discord-afk-js');
+     * const { AfkClient } = require('discord-afk-js');
      * 
-     * const afk = new AfkCollections();
+     * const afk = new AfkClient();
      * 
      * afk.addUser(message.author.id, [Date.now(), reason]);
      * ```
@@ -129,9 +134,9 @@ declare class AfkCollections {
      * 
      * @example
      * ```javascript
-     * const { AfkCollections } = require('discord-afk-js');
+     * const { AfkClient } = require('discord-afk-js');
      * 
-     * const afk = new AfkCollections();
+     * const afk = new AfkClient();
      * 
      * afk.removeUser(message.author.id);
      * ```
@@ -146,9 +151,9 @@ declare class AfkCollections {
      * 
      * @example
      * ```javascript
-     * const { AfkCollections } = require('discord-afk-js');
+     * const { AfkClient } = require('discord-afk-js');
      * 
-     * const afk = new AfkCollections();
+     * const afk = new AfkClient();
      * 
      * afk.findUser(message.author.id);
      * ```
@@ -163,15 +168,15 @@ declare class AfkCollections {
      * 
      * @example
      * ```javascript
-     * const { AfkCollections } = require('discord-afk-js');
+     * const { AfkClient } = require('discord-afk-js');
      * 
-     * const afk = new AfkCollections();
+     * const afk = new AfkClient();
      * 
      * afk.findMessage(message.author.id);
      * ```
      */
     findMessage(userId: string[]): string | undefined;
-}
+};
 
 const checkUpdate = async () => {
     const { version: latestVersion } = await pkgJson(name);
@@ -206,4 +211,4 @@ checkUpdate();
  */
 declare const versions: string;
 
-export { AfkCollections, versions };
+export { AfkClient, versions };
