@@ -1,6 +1,6 @@
 {
   "name": "discord-afk-js",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "discord-afk-js package is a convenient tool for creating AFK commands (with database)",
   "main": "./dist/index.js",
   "types": "./dist/index.ts",
@@ -55,7 +55,7 @@
     "moment": "^2.29.4",
     "mongoose": "^8.0.3",
     "package-json": "^7.0.0",
-    "semver": "^7.5.4",
+    "semver": "^7.6.0",
     "semver-diff": "^3.1.1"
   },
   "devDependencies": {

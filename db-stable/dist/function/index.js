@@ -40,34 +40,34 @@ async function mongoConnect(token, log = true) {
     });
 };
 // =================================================================
-async function setUser(userId, reason) {
+async function setUser(id, reason = 'No Reason') {
     if (!isConnected) {
         throw new AfkConnectionError('Not connected to MongoDB');
     };
-    const data = await afkdb.findOne({ Id: userId });
+    const data = await afkdb.findOne({ userId: id });
     if (!data) {
-        (await afkdb.create({ Id: userId, reasonData: reason })).save();
+        (await afkdb.create({ userId: id, reasonData: reason })).save();
     } else return;
 };
 // =================================================================
-async function deleteUser(userId) {
-    const data = await afkdb.findOne({ Id: userId });
+async function deleteUser(id) {
+    const data = await afkdb.findOne({ userId: id });
     if (data) {
-        await afkdb.deleteOne({ Id: userId });
+        await afkdb.deleteOne({ userId: id });
     } else return;
 };
 // =================================================================
-async function searchUser(userId) {
-    const data = await afkdb.findOne({ Id: userId });
-    console.log(data);
-    if (data) {
-        console.log(data);
-        return true;
-    } else return false;
+async function searchUser(id) {
+    if (isConnected) {
+        const data = await afkdb.findOne({ userId: id });
+        if (data) {
+            return true;
+        } else return false;
+    };
 };
 // =================================================================
-async function getUser(userId) {
-    const data = await afkdb.findOne({ Id: userId });
+async function getUser(id) {
+    const data = await afkdb.findOne({ userId: id });
     if (data) {
         return data.reasonData;
     } else return;

@@ -10,13 +10,16 @@
 const { Schema, model } = require('mongoose');
 
 module.exports = model('afkdata', new Schema({
-    Id: String,
+    userId: {
+        type: String,
+        required: true,
+    },
     reasonData: {
         type: String,
         default: 'No Reason',
     },
     timeData : {
         type: Date,
-        default: new Date(),
+        default: Date.now,
     },
 }));

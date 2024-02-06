@@ -18,6 +18,7 @@ import {
 
 import {
     ConnectionOptions,
+    UserOptions,
 } from './options';
 
 // ================================================================
@@ -128,23 +129,21 @@ class AfkClient {
         };
     };
 
-    async addUser(options: { userId?: string, reason?: string } = {}) {
-        const { userId = '', reason = '' } = options;
-        return setUser(userId, reason);
+    async addUser(options: UserOptions): Promise<void> {
+        const { id = '', reason = '' } = options;
+        await setUser(id, reason);
     };
 
-    async removeUser(userId: string) {
-        return deleteUser(userId);
+    async removeUser(id: string): Promise<void> {
+        await deleteUser(id);
     };
 
-    async findUser(userId: string) {
-        const results = await searchUser(userId);
-        return results;
+    async findUser(id: string): Promise<boolean> {
+        return searchUser(id);
     };
 
-    async findMessage(userId: string) {
-        const results = await getUser(userId);
-        return results;
+    async findMessage(id: string): Promise<string | undefined> {
+        return getUser(id);
     };
 };
 // ================================================================

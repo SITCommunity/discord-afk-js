@@ -5,7 +5,7 @@ import chalk from 'chalk';
 import semver from 'semver';
 import pkgJson from 'package-json';
 import semverDiff from 'semver-diff';
-import { connect } from 'mongoose';
+import { StringSchemaDefinition, connect } from 'mongoose';
 import afkdb from '../../lib/db/afkdata';
 
 import {
@@ -31,35 +31,35 @@ async function mongoConnect(token: string, log: boolean = true): Promise<void> {
     });
 };
 // =================================================================
-async function setUser(userId: string, reason: string) {
+async function setUser(id: string, reason: string = 'No Reason') {
     if (!isConnected) {
         throw new AfkConnectionError('Not connected to MongoDB');
     };
-    const data = await afkdb.findOne({ Id: userId });
+    const data = await afkdb.findOne({ userId: id });
     if (!data) {
-        (await afkdb.create({ Id: userId, reasonData: reason })).save();
+        (await afkdb.create({ userId: id, reasonData: reason })).save();
     } else return;
 };
 // =================================================================
-async function deleteUser(userId: string) {
-    const data = await afkdb.findOne({ Id: userId });
+async function deleteUser(id: string) {
+    const data = await afkdb.findOne({ userId: id });
     if (data) {
-        await afkdb.deleteOne({ Id: userId });
+        await afkdb.deleteOne({ userId: id });
     } else return;
 };
 // =================================================================
-async function searchUser(userId: string) {
-    const data = await afkdb.findOne({ Id: userId });
+async function searchUser(id: string) {
+    const data = await afkdb.findOne({ userId: id });
     if (data) {
         return true;
     } else return false;
 };
 // =================================================================
-async function getUser(userId: string) {
-    const data = await afkdb.findOne({ Id: userId });
+async function getUser(id: string) {
+    const data = await afkdb.findOne({ userId: id });
     if (data) {
         return data.reasonData;
-    } else return;
+    } else return null;
 };
 // =================================================================
 async function checkUpdate() {

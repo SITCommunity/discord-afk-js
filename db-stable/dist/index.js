@@ -10,9 +10,10 @@
 // ================================================================
 
 const {
+    AfkTypeError,
     AfkTimeout,
     AfkConnectionError,
-    AfkDbError
+    AfkDbError,
 } = require('../lib/error');
 
 const {
@@ -68,7 +69,7 @@ class AfkClient {
      * @throws {AfkDbError}
      */
     async connect(options = {}) {
-        const { token, log = true } = options;
+        const { token = '', log = true } = options;
         try {
             if (!token.startsWith("mongodb"))
                 throw new AfkDbError("Invalid MongoURL");
@@ -91,50 +92,52 @@ class AfkClient {
     /**
      * Add a user to AFK status.
      *
-     * @param {string} userId - The user's ID.
+     * @param {string} id - The user's ID.
      * @param {string} afkMessage - The AFK message.
-     * @throws {AfkError} if userId is not a valid string.
+     * @throws {AfkError} if id is not a valid string.
      * @returns {Map} The updated user map.
      */
-    async addUser(userId, reason) {
-        return setUser(userId, reason);
+    async addUser(options = {}) {
+        const { id = '', reason = '' } = options;
+        await setUser(id, reason);
     };
 
     /**
      * Remove a user from AFK status.
      *
-     * @param {string} userId - The user's ID.
-     * @throws {AfkError} if userId is not a valid string.
+     * @param {string} id - The user's ID.
+     * @throws {AfkError} if id is not a valid string.
      * @returns {boolean} `true` if the user was removed, `false` otherwise.
      */
-    async removeUser(userId) {
-        return deleteUser(userId);
-    }
+    async removeUser(id) {
+        await deleteUser(id);
+    };
 
     /**
      * Find the AFK status of a user.
      *
-     * @param {string} userId - The user's ID.
-     * @throws {AfkError} if userId is not a valid string.
+     * @param {string} id - The user's ID.
+     * @throws {AfkError} if id is not a valid string.
      * @returns {boolean} `true` if the user is AFK, `false` otherwise.
      */
-    async findUser(userId) {
-        const results = await searchUser(userId);
-        return results;
-    }
+    async findUser(id) {
+        const result = await searchUser(id);
+        return result;
+    };
 
     /**
      * Get the AFK message of a user.
      *
-     * @param {string} userId - The user's ID.
-     * @throws {AfkError} if userId is not a valid string.
+     * @param {string} id - The user's ID.
+     * @throws {AfkError} if id is not a valid string.
      * @returns {string[] | undefined} The AFK message, or `undefined` if the user is not AFK.
      */
-    async findMessage(userId) {
-        const results = await getUser(userId);
-        return results;
-    }
-}
+    async findMessage(id) {
+        const result = await getUser(id);
+        console.log(result);
+        return result;
+    };
+};
 __name(AfkClient, "AfkClient");
 // =================================================================
 /**
