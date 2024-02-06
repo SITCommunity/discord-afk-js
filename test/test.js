@@ -1,7 +1,7 @@
 const { AfkClient, versions } = require('../dist');
 const afk = new AfkClient();
 test("add function", async () => {
-    afk.connect({ token: 'mongodb+srv://Discord:quit75gamingpro@bot.zobkl.mongodb.net/rickastley' });
+    afk.connect({ token: '' });
 
     afk.addUser({ id: '123456' });
 
