@@ -13,11 +13,9 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: |
-          cd nodb-stable
           npm install
       - name: Run tests and collect coverage
         run: |
-          cd nodb-stable
           npm run test
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
