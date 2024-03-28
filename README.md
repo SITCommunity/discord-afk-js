@@ -11,105 +11,78 @@
     <a href="https://github.com/CyraTeam/discord-afk-js" target="_blank" rel="noopener noreferrer"><img alt="Visitor" src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FCyraTeam%2Fdiscord-afk-js&countColor=%2337d67a&style=flat"></a>
     <a href="https://github.com/CyraTeam/discord-afk-js/issues" target="_blank" rel="noopener noreferrer"><img alt="Issues" src="https://img.shields.io/github/issues/CyraTeam/discord-afk-js"></a>
     <a href="https://github.com/CyraTeam/discord-afk-js" target="_blank" rel="noopener noreferrer"><img alt="Commit" src="https://img.shields.io/github/commit-activity/y/CyraTeam/discord-afk-js?label=Commit%20Activity&logo=github"></a>
-    <a href="https://cyrabot.groups.id/" target="_blank" rel="noopener noreferrer"><img alt="Website" src="https://img.shields.io/website?url=https%3A%2F%2Fcyrabot.groups.id%2F"></a>
+    <a href="https://codecov.io/gh/CyraTeam/discord-afk-js"><img src="https://codecov.io/gh/CyraTeam/discord-afk-js/graph/badge.svg?token=98ZKDNNXVE"/></a> 
+ </a>
   </p>
 </div>
 
 # discord-afk-js
-[discord-afk-js](https://github.com/CyraTeam/discord-afk-js) package for more easy to make afk command without db (database)
+**[discord-afk-js](https://www.npmjs.com/package/discord-afk-js?activeTab=readme)** is a JavaScript library created to facilitate the management of AFK (Away From Keyboard) status within Discord bots. This library is designed to simplify the process of tracking and handling AFK users in a Discord server without the need for an external database.
 
-## Install
-- NPM
-```
-npm i discord-afk-js
-```
-
-## Requirements
+# Requirements
 - [NodeJS](https://nodejs.org) 16.9.0 or higher
-- [DiscordJS](https://discord.js.org) v14
 
-## Quick example
-```js
-const { afk } = require('discord-afk-js');
-const reason = args.join(' ') || 'No Reason';
-afk.set(message.author.id, [Date.now(), reason]);
-message.reply(`${message.member} now afk!\nReason: ${reason}`);
+# Installation
+To start using **discord-afk-js**, you can install it through npm, the Node.js package manager. Open your terminal and run the following command:
+
+```bash
+npm install discord-afk-js
 ```
 
-## More Example
-- bot.js
-```js
-const { Events } = require('discord.js');
-const { afk } = require('discord-afk-js');
+# Usage
+**discord-afk-js** offers a straightforward way to manage AFK users in your Discord bot. Below is an example of how to utilize the **AfkClient** class:
+
+```javascript
+const { AfkClient } = require('discord-afk-js');
 const moment = require('moment');
 
-client.on(Events.MessageCreate, async(message) => {
-  const member = message.mentions.members.first();
-  const data = afk.get(member.id);
-  if(data) {
-    const [timestamp, reason] = data;
-    const timeago = moment(timestamp).fromNow();
-    message.reply(`${member} afk right now, Reason: ${reason} ${timeago}`)
-  };
-  const getdata = afk.get(message.author.id);
-  if(getdata) {
-    afk.delete(message.author.id);
-    message.reply(`${message.member} removed you from afk`);
-  };
-});
+// Create an instance of AfkClient
+const afk = new AfkClient();
+
+// Checking if a user is AFK without time
+const reason = args.join(' ') || 'No Reason';
+afk.addUser('user123', reason);
+
+if (afk.findUser('user123')) {
+  console.log('User is marked as AFK'); // console: User is marked as AFK
+  console.log('AFK Message:', afk.afkMessage('user123')); // console: AFK Message: No Reason
+}
+// or
+// Adding a user to AFK status with time
+const reason = args.join(' ') || 'No Reason';
+afk.addUser('user123', [Date.now(), reason]);
+
+if (afk.findUser('user123')) {
+  console.log('User is marked as AFK'); // console: User is marked as AFK
+  const data = afk.findMessage('user123');
+
+  const [ time, reason ] = data;
+  const timeago = moment(time).fromNow();
+
+  console.log('AFK Message:', `${reason} ${timeago}`); // console: AFK Message: No Reason a few seconds ago
+}
+
+// Removing a user from AFK status
+afk.removeUser('user123');
 ```
-- afk.js
-```js
-//example using events
-const { afk } = require('discord-afk-js');
+In the code snippet above, we start by importing the **AfkClient** class. After creating an instance of this class, we demonstrate how to add a user to the AFK list, check their AFK status, and remove them from AFK status.
 
-module.exports = {
-  name: 'afk',
-
-  run: async(client, message, args) => {
-    const reason = args.join(' ') || 'No Reason';
-    afk.set(message.author.id, [Date.now(), reason]);
-    message.reply(`${message.member} now afk!\nReason: ${reason}`);
-  },
-};
-
-//example without using events
-const { Events } = require('discord.js');
-const { afk } = require('discord-afk-js');
-
-client.on(Events.MessageCreate, async(message) => {
-  const reason = args.join(' ') || 'No Reason';
-  afk.set(message.author.id, [Date.now(), reason]);
-  message.reply(`${message.member} now afk!\nReason: ${reason}`);
-});
-```
+# API
+The **discord-afk-js** library provides a set of methods for working with AFK status using the **AfkClient** class.
 
 # Changelog | Migrating to discord-afk-js
-
 ```diff
-- removing unused depencies
-
-+ fix known security major
-
-+ added update notifier
++ change afk to AfkClient for import
++ afk.set() -> afk.addUser()
++ afk.delete() -> afk.removeUser()
++ afk.get() -> afk.findUser()
++ afk.findMessage()
 ```
-<img src="https://cdn.discordapp.com/attachments/1038704467828281346/1164047811495608320/update_notifier.png?ex=6541cb01&is=652f5601&hm=8eed392559360abcd43adb75db184fd93b4d923b5b78aad5254425d5c9209946&"></img>
 
-## Join our Discord server
+# License
+This project is open-source and is licensed under the Apache 2.0 License. You can find more details about the license in the [LICENSE.md](https://github.com/CyraTeam/discord-afk-js/blob/main/LICENSE) file included in the project.
+
+With this comprehensive readme, you have a clear and detailed guide on how to use the **discord-afk-js** library to manage AFK status in your Discord bot.
+
+# Discord Servers
   <a href="https://discord.gg/qpT2AeYZRN" target="_blank" rel="noopener noreferrer"><img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord"></a>
-
-## Advertising
-<div align="center">
-  <p>
-  <a>CyraBot</a>
-  <a>need security bot for your discord servers? listening music?</a>
-  <a>all you need on here</a>
-  <a href="https://www.cyrabot.my.id/">Website</a> | <a href="https://www.cyrabot.my.id/invite/">Invite</a>
-  <img src="https://cdn.discordapp.com/attachments/1038704467828281346/1090882515205619792/cyrabot.gif"></img>
-</div>
-
-## License & Copyright
-```
-This Project under MIT License
-Copyright (c) 2023-present CyraTeam
-```
