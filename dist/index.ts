@@ -57,7 +57,7 @@ import {
  * afk.connect({ token: 'token', log: 'false' });
  * 
  * // Add a user to AFK status
- * afk.addUser("user123", "Away from keyboard");
+ * afk.addUser({ id: "user123", reason: "Away from keyboard" });
  * 
  * // Check if a user is AFK
  * const isUserAFK = afk.findUser("user123");
@@ -108,6 +108,19 @@ import {
 class AfkClient {
     private isConnected: boolean = false;
 
+    /**
+     * Connect to a MongoDB database.
+     * 
+     * This method connects to a MongoDB database using the provided connection options. 
+     * If the connection is successful, the client will be marked as connected.
+     * 
+     * @param options - An object containing the database connection token and a log flag.
+     *                  The token must be a valid MongoDB connection string.
+     *                  The log flag determines whether connection logs are printed to the console.
+     * @throws AfkDbError - Thrown if the provided token is not a valid MongoDB URL.
+     * @throws AfkTimeout - Thrown if the MongoDB connection times out.
+     * @throws AfkConnectionError - Thrown for other MongoDB connection errors.
+     */
     async connect(options: ConnectionOptions): Promise<void> {
         const { token = '', log = true } = options;
         try {
@@ -129,31 +142,70 @@ class AfkClient {
         };
     };
 
+    /**
+     * Add a user to the AFK (Away From Keyboard) status list.
+     * 
+     * Use this method to mark a user as AFK, providing their ID and an optional reason.
+     * 
+     * @param options - An object containing the user ID and the reason for being AFK.
+     *                  The ID is a unique identifier for the user.
+     *                  The reason is an optional string explaining why the user is AFK.
+     */
     async addUser(options: UserOptions): Promise<void> {
         const { id = '', reason = '' } = options;
         await setUser(id, reason);
     };
 
+    /**
+     * Remove a user from the AFK status list.
+     * 
+     * Use this method to mark a user as no longer AFK by providing their unique ID.
+     * 
+     * @param id - The unique identifier for the user to be removed from the AFK status list.
+     */
     async removeUser(id: string): Promise<void> {
         await deleteUser(id);
     };
 
+    /**
+     * Check if a user is currently marked as AFK.
+     * 
+     * This method checks whether a user, identified by their unique ID, is currently marked 
+     * as AFK (Away From Keyboard). It returns a boolean value indicating the user's AFK status.
+     * 
+     * @param id - The unique identifier for the user to check.
+     * @returns boolean - `true` if the user is AFK, `false` otherwise.
+     */
     async findUser(id: string): Promise<boolean> {
         return searchUser(id);
     };
 
+    /**
+     * Retrieve the reason why a user is marked as AFK.
+     * 
+     * This method returns the reason why a user, identified by their ID, is marked as AFK.
+     * 
+     * @param id - The unique identifier of the user.
+     * @returns string | undefined - The reason for the AFK status, or `undefined` if no reason is found.
+     */
     async findMessage(id: string): Promise<string | undefined> {
         return getUser(id);
     };
 };
 // ================================================================
 /**
- * Check update before notify to console.
+ * Check for updates and notify the console if an update is available.
+ * 
+ * This function checks for updates to the `discord-afk-js` library and logs a message to 
+ * the console if an update is available. This ensures users are aware of the latest version.
  */
 checkUpdate();
 // ================================================================
 /**
- * The version of the `discord-afk-js` library that you are currently using.
+ * The version of the `discord-afk-js` library you are currently using.
+ * 
+ * This constant contains the version number of the `discord-afk-js` library in use.
+ * It can be used for logging, debugging, or ensuring compatibility with other parts of your project.
  */
 declare const versions: string;
 // ================================================================

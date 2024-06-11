@@ -21,7 +21,7 @@
     <a href="https://github.com/skick1234/CyraTeam/discord-afk-js" target="_blank" rel="noopener noreferrer">
       <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/CyraTeam/discord-afk-js">
     </a>
-    <a href="https://discord.gg/qpT2AeYZRN" target="_blank" rel="noopener noreferrer">
+    <a href="https://discord.gg/yyaxUHTRSa" target="_blank" rel="noopener noreferrer">
       <img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord">
     </a>
     <a href="https://github.com/CyraTeam/discord-afk-js" target="_blank" rel="noopener noreferrer">
@@ -43,13 +43,13 @@
 
 # discord-afk-js
 
-**[discord-afk-js@database](https://www.npmjs.com/package/discord-afk-js?activeTab=readme)** is an npm package designed for Discord bot developers. It facilitates efficient AFK user management with seamless integration capabilities for external databases.
+**[discord-afk-js]** is an npm package designed for Discord bot developers. It facilitates efficient AFK user management with seamless integration capabilities for external databases.
 
 <!-- Section for system requirements -->
 
 # Requirements
 
-- [NodeJS](https://nodejs.org) 16.9.0 or higher
+- [NodeJS] 16.9.0 or higher
 
 <!-- Section for installation instructions -->
 
@@ -58,8 +58,9 @@
 To use **discord-afk-js** with database versions, install it through npm, the Node.js package manager. Run the following command in your terminal:
 
 ```bash
-npm install discord-afk-js@database
+npm install discord-afk-js@[database version]
 ```
+Note: you can get database versions from [Here]
 
 <!-- Section for usage examples -->
 
@@ -122,3 +123,7 @@ This project is open-source and is licensed under the Apache 2.0 License. Find m
 <a href="https://discord.gg/qpT2AeYZRN" target="_blank" rel="noopener noreferrer">
   <img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord">
 </a>
+
+[Here]: https://www.npmjs.com/package/discord-afk-js/v/10.0.0?activeTab=versions
+[NodeJS]: https://nodejs.org
+[discord-afk-js]: https://www.npmjs.com/package/discord-afk-js?activeTab=readme

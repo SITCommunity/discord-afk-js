@@ -1,6 +1,6 @@
 {
   "name": "discord-afk-js",
-  "version": "1.0.0",
+  "version": "10.0.1",
   "description": "discord-afk-js package is a convenient tool for creating AFK commands (with database)",
   "main": "./dist/index.js",
   "types": "./dist/index.ts",
