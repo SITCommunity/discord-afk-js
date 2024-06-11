@@ -1,6 +1,6 @@
 /**
  * @author brokenedtzjs
- * @license Apach-2.0
+ * @license MIT-License
  * @copyright brokenedtzjs
  * @file function.js
  */

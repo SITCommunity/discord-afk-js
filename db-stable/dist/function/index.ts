@@ -59,7 +59,7 @@ async function getUser(id: string) {
     const data = await afkdb.findOne({ userId: id });
     if (data) {
         return data.reasonData;
-    } else return null;
+    } else return undefined;
 };
 // =================================================================
 async function checkUpdate() {
