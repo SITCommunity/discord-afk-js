@@ -51,7 +51,6 @@
   "dependencies": {
     "boxen": "^5.1.2",
     "chalk": "^4.1.2",
-    "currency-system": "^2.8.9",
     "moment": "^2.29.4",
     "mongoose": "^8.0.3",
     "package-json": "^7.0.0",
