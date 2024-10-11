@@ -1,6 +1,6 @@
 {
   "name": "discord-afk-js",
-  "version": "1.4.1",
+  "version": "1.5.2",
   "description": "discord-afk-js package is a convenient tool for creating AFK commands without the need for a database",
   "contributors": [
     "BrokenEdtz <brokenedtz@cyrateam.xyz>"
@@ -41,10 +41,12 @@
   "exports": {
     ".": {
       "import": {
+        "lib": "./lib",
         "types": "./typings/index.d.mts",
         "default": "./src/index.js"
       },
       "require": {
+        "lib": "./lib",
         "types": "./typings/index.d.ts",
         "default": "./src/index.js"
       }
@@ -56,7 +58,8 @@
   },
   "files": [
     "src",
-    "typings"
+    "typings",
+    "lib"
   ],
   "engines": {
     "node": ">=18"
