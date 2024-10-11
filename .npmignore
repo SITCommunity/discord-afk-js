@@ -1,7 +1,15 @@
-.github
+# Packages
 node_modules
+pnpm-lock.yaml
 package-lock.json
-test.js
+
+# Test dependencies
 test
-src
-test.json
+coverage
+
+# Configuration
+tsconfig.json
+jest.config.js
+cliff.toml
+.prettierrc.json
+.prettierignore

@@ -1,0 +1,32 @@
+#nodb check
+name: NodeJS with Grunt
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 19.x, 20.x, 21.x, 22.x]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Run tests and collect coverage
+        run: |
+          npm run test
+
+      - name: Upload coverage reports to Codecov
+        if: github.repository_owner == 'SITCommunity'
+        uses: codecov/codecov-action@v3
