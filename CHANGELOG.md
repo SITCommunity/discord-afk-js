@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## [1.5.3] - 2024-10-13
 
+### Features
+
+- Time will not returns as Number again
+
+### Bug Fixes
+
+- Invalid Received
+
 ### Revamp - Revamping error logging
 
 - `addUser` > `findUser`
