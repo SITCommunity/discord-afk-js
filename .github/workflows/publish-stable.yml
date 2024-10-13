@@ -1,4 +1,4 @@
-name: Publish Latest
+name: Publish Release
 
 on:
   release:
@@ -8,8 +8,10 @@ jobs:
   npm-publish:
     name: npm publish
     runs-on: ubuntu-latest
+
     permissions:
       id-token: write
+
     if: github.repository_owner == 'SITCommunity'
     steps:
       - name: Checkout Repositories
