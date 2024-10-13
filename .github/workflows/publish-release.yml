@@ -29,7 +29,6 @@ jobs:
 
       - name: Publish package
         run: |
-          npm ci
           pnpm i
           pnpm publish --provenance --no-git-checks
         env:
