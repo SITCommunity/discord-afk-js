@@ -51,14 +51,14 @@ export interface AfkClient {
  * const afk = new AfkClient();
  * 
  * // Add a user to AFK status
- * afk.addUser("user123", "Away from keyboard");
+ * afk.setUser("user123", "Away from keyboard");
  * 
  * // Check if a user is AFK
  * const isUserAFK = afk.findUser("user123");
  * 
  * if (isUserAFK) {
  *   // Get the user's AFK message
- *   const message = afk.findMessage("user123");
+ *   const message = await afk.getReason("user123");
  *   console.log(`User is AFK with message: ${message}`);
  * }
  * ```
@@ -94,17 +94,14 @@ export interface AfkClient {
  * ## Compatibility
  * `discord-afk-js` is compatible with various Discord bot frameworks and libraries, making it a versatile choice for AFK management in your bot.
  */
-export class AfkClient {
-    name: string;
-    version: string;
-
+export declare class AfkClient {
     constructor();
 
     /**
      * Add a user to AFK status.
      *
-     * @param userId - The user's ID.
-     * @param afkMessage - The AFK message.
+     * @param id - The user's ID.
+     * @param reason - The AFK message.
      * 
      * @example
      * ```javascript
@@ -112,16 +109,16 @@ export class AfkClient {
      * 
      * const afk = new AfkClient();
      * 
-     * afk.addUser(message.author.id, [Date.now(), reason]);
+     * afk.setUser(message.author.id, [Date.now(), reason]);
      * ```
      */
-    addUser(userId: string, afkMessage: string): void;
-    addUser(userId: string, afkMessage: [number, string]): void;
+    setUser(id: string, reason: string): void;
+    setUser(id: string, reason: [number, string]): void;
 
     /**
      * Remove a user from AFK status.
      *
-     * @param userId - The user's ID.
+     * @param id - The user's ID.
      * 
      * @example
      * ```javascript
@@ -132,12 +129,12 @@ export class AfkClient {
      * afk.removeUser(message.author.id);
      * ```
      */
-    removeUser(userId: string): void;
+    removeUser(id: string): void;
 
     /**
      * Find the AFK status of a user.
      *
-     * @param userId - The user's ID.
+     * @param id - The user's ID.
      * @returns `true` if the user is AFK, `false` otherwise.
      * 
      * @example
@@ -149,12 +146,12 @@ export class AfkClient {
      * afk.findUser(message.author.id);
      * ```
      */
-    findUser(userId: string): boolean;
+    findUser(id: string): boolean;
 
     /**
      * Get the AFK message of a user.
      *
-     * @param userId - The user's ID.
+     * @param id - The user's ID.
      * @returns The AFK message, or `undefined` if the user is not AFK.
      * 
      * @example
@@ -163,11 +160,11 @@ export class AfkClient {
      * 
      * const afk = new AfkClient();
      * 
-     * afk.findMessage(message.author.id);
+     * afk.getReason(message.author.id);
      * ```
      */
-    findMessage(userId: string): string | undefined;
-    findMessage(userId: string[]): string | undefined;
+    getReason(id: string): string | undefined;
+    getReason(id: string[]): string | undefined;
 
     /**
      * Enable or disable updates reminder.

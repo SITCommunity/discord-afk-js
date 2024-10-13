@@ -1,0 +1,30 @@
+name: Publish Latest
+on:
+    release:
+        types: [released]
+jobs:
+    npm-publish:
+        name: npm publish
+        runs-on: ubuntu-latest
+        permissions:
+            id-token: write
+        if: github.repository_owner == 'SITCommunity'
+        steps:
+            -   name: Checkout Repositories
+                uses: actions/checkout@v4
+
+            -   name: Install Node.js 20.x
+                uses: actions/setup-node@v4
+                with:
+                    node-version: 20
+                    registry-url: https://registry.npmjs.org
+            
+            -   name: Build dependencies
+                run: pnpm run test
+            
+            -   name: Build and publish package
+                run: |
+                    pnpm build
+                    pnpm publish --provenance --no-git-checks
+                env:
+                    NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
