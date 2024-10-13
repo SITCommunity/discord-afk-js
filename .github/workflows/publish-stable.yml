@@ -21,6 +21,9 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org
 
+      - name: Install dependencies
+        uses: ./.github/packages/pnpm
+
       - name: Build dependencies
         run: pnpm run test
 
