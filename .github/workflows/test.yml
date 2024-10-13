@@ -3,9 +3,9 @@ name: NodeJS with Grunt
 
 on:
   push:
-    branches: ['main']
+    branches: ['nodb-stable']
   pull_request:
-    branches: ['main']
+    branches: ['nodb-stable']
 
 jobs:
   build:
