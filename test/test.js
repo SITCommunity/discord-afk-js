@@ -36,15 +36,13 @@ jest.mock('../src/util/UpdateChecker', () => ({
 }));
 
 // Import module after mocking
-const pkgJson = require('package-json');
 const {
-  UpdateInit,
   checkingUpdate
 } = require("../src/util/UpdateChecker");
 const {
   AfkClient
 } = require("../src");
-const { AfkError } = require('../src/error');
+const moment = require('moment');
 
 // Spy on console.log before test
 beforeEach(() => {
@@ -63,15 +61,18 @@ describe('AFK Client Tests', () => {
   test('getReason returns default if no result', async () => {
     const afkClient = new AfkClient();
     afkClient.setUser({ id: 'id1' });  // Using unique id
-    const reason = await afkClient.getReason('id1');
-    expect(reason).toEqual([expect.any(Number), 'No Reason']);
+    const [reason, time] = await afkClient.getReason('id1');
+    expect(reason).toMatch('No Reason');
+    expect(time).toMatch(moment(Date.now()).fromNow());
   });
 
   test('getReason returns custom reason if user has one', async () => {
     const afkClient = new AfkClient();
     afkClient.setUser({ id: 'id2', reason: 'AFK for lunch' });  // Unique id
-    const reason = await afkClient.getReason('id2');
-    expect(reason).toEqual(expect.arrayContaining([expect.any(Number), 'AFK for lunch']));
+    const [reason, time] = await afkClient.getReason('id2');
+    console.log(time, reason)
+    expect(reason).toMatch('AFK for lunch');
+    expect(time).toMatch(moment(Date.now()).fromNow());
   });
 
   test('getUser returns user data', async () => {
