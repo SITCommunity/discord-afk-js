@@ -14,6 +14,7 @@ const {
 const {
     checkingUpdate
 } = require('../util/UpdateChecker');
+const moment = require('moment');
 
 class AfkClient {
     constructor() {
@@ -30,9 +31,9 @@ class AfkClient {
         }
 
         if (reason === undefined) {
-            return this.user.set(id, [Date.now(), 'No Reason']);
+            return this.user.set(id, ['No Reason', moment(Date.now()).fromNow()]);
         } else {
-            return this.user.set(id, [Date.now(), reason]);
+            return this.user.set(id, [reason, moment(Date.now()).fromNow()]);
         }
     }
 
