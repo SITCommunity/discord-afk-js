@@ -1,5 +1,5 @@
 #nodb check
-name: NodeJS with Grunt
+name: Test
 
 on:
   push:
