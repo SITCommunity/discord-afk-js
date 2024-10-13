@@ -37,33 +37,43 @@ npm install discord-afk-js
 
 ```javascript
 const { AfkClient } = require('discord-afk-js');
-const moment = require('moment');
 
 // Create an instance of AfkClient
 const afk = new AfkClient();
 
+// ================================================================
+
 // Checking if a user is AFK without time
-const reason = args.join(' ');
-afk.setUser('user123', reason);
+afk.setUser({ id: 'id1', reason: 'Afk Playing Game' });
 
-if (afk.findUser('user123')) {
+const [reason, time] = await afk.getReason('id1');
+
+if (afk.findUser('id1')) {
   console.log('User is marked as AFK'); // console: User is marked as AFK
-  console.log('AFK Message:', afk.getReason('user123')); // console: AFK Message: No Reason
+  console.log('AFK Message:', `${reason} ${time}`); // console: AFK Message: Afk Playing Game a few seconds ago
 }
-// or
-// Adding a user to AFK status with time
-const reason = args.join(' ');
-afk.setUser('user123', reason);
 
-if (afk.findUser('user123')) {
+// ================================================================
+
+// Adding a user to AFK status without reason
+afk.setUser({ id: 'id2' });
+
+if (afk.findUser('id2')) {
   console.log('User is marked as AFK'); // console: User is marked as AFK
-  const data = afk.getReason('user123');
+  const [reason, time] = await afk.getReason('id2');
 
-  const [time, reason] = data;
-  const timeago = moment(time).fromNow();
-
-  console.log('AFK Message:', `${reason} ${timeago}`); // console: AFK Message: No Reason a few seconds ago
+  console.log('AFK Message:', `${reason} ${time}`); // console: AFK Message: No Reason a few seconds ago
 }
+
+// ================================================================
+
+// Get reason without array
+afk.setUser({ id: 'id3' });
+const reason = await afk.getReason('id3');
+
+console.log(reason); // console: No Reason a few seconds ago
+
+//================================================================
 
 // Removing a user from AFK status
 afk.removeUser('user123');
