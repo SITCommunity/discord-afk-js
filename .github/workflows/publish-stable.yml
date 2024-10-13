@@ -12,7 +12,7 @@ jobs:
     permissions:
       id-token: write
 
-    if: github.repository_owner == 'SITCommunity'
+    if: github.repository_owner == 'sitcommunity'
     steps:
       - name: Checkout Repositories
         uses: actions/checkout@v4
