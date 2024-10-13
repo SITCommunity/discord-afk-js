@@ -5,7 +5,7 @@ on:
     types: [released]
 
 jobs:
-  npm-publish:
+  build:
     name: npm publish
     runs-on: ubuntu-latest
 
