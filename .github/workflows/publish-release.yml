@@ -27,9 +27,10 @@ jobs:
       - name: Build dependencies
         run: pnpm run test
 
-      - name: Build and publish package
+      - name: Publish package
         run: |
-          pnpm build
+          npm ci
+          pnpm i
           pnpm publish --provenance --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
