@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.5.3] - 2024-10-**
+## [1.5.3] - 2024-10-13
 
 ### Revamp - Revamping error logging
 

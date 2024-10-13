@@ -1,6 +1,6 @@
 {
   "name": "discord-afk-js",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "discord-afk-js package is a convenient tool for creating AFK commands without the need for a database",
   "contributors": [
     "BrokenEdtz <brokenedtz@cyrateam.xyz>"
