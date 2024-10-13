@@ -23,6 +23,7 @@
     "nodb"
   ],
   "author": "brokenedtz",
+  "funding": "https://github.com/SITCommunity/discord-afk-js?sponsor",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CyraTeam/discord-afk-js/issues"
@@ -83,5 +84,8 @@
     "tsd": "^0.31.2",
     "turbo": "^2.1.3",
     "typescript": "^5.6.3"
+  },
+  "publishConfig": {
+    "provenance": true
   }
 }
