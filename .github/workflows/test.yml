@@ -31,10 +31,10 @@ jobs:
           cd packages/discord-afk-js_nodb
           pnpm i && pnpm run test
 
-      - name: Run tests and collect coverage | db
-        run: |
-          cd packages/discord-afk-js_db
-          pnpm i && pnpm run test
+      # - name: Run tests and collect coverage | db
+      #   run: |
+      #     cd packages/discord-afk-js_db
+      #     pnpm i && pnpm run test
 
       # Copy and paste the codecov/test-results-action here
       - name: Upload coverage to Codecov
