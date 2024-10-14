@@ -1,0 +1,13 @@
+# Packages
+node_modules
+package-lock.json
+
+# Test Logs
+coverage
+
+# Miscellaneous
+.turbo
+junit.xml
+
+# Generated files
+typings/index.d.mts

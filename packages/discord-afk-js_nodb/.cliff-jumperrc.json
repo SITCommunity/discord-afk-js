@@ -1,0 +1,6 @@
+{
+    "name": "discord-afk-js",
+    "packagePath": "packages/discord-afk-js_nodb",
+    "tagTemplate": "{{new-version}}",
+    "identifierBase": false
+}

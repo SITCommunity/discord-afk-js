@@ -1,0 +1,38 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"name": "@sitcommunity/discord-afk-js",
+	"version": "0.0.0",
+	"description": "discord-afk-js is a JavaScript library created to facilitate the management of AFK (Away From Keyboard) status within Discord bots.",
+	"private": true,
+	"scripts": {
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SITCommunity/discord-afk-js.git"
+	},
+	"keywords": [
+		"discord",
+		"afk",
+		"discord-afk-js",
+		"discord-afk"
+	],
+	"bugs": {
+		"url": "https://github.com/SITCommunity/discord-afk-js/issues"
+	},
+	"contributors": [
+		"BrokenEdtz <brokenedtz@cyrateam.xyz>"
+	],
+	"author": "brokenedtz",
+	"license": "MIT",
+	"homepage": "https://github.com/SITCommunity/discord-afk-js",
+	"devDependencies": {
+		"prettier": "^3.3.3",
+		"turbo": "^2.0.14",
+		"typescript": "^5.6.3"
+	},
+	"type": "module",
+	"engines": {
+		"node": ">=18"
+	},
+	"packageManager": "pnpm@9.8.0"
+}
