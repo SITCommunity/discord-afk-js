@@ -25,16 +25,16 @@ jobs:
 
       - name: Install dependencies
         uses: ./packages/actions/pnpm
-
+        
       - name: Run tests and collect coverage | nodb
         run: |
           cd packages/discord-afk-js_nodb
-          pnpm run test
+          pnpm i && pnpm run test
 
       - name: Run tests and collect coverage | db
         run: |
           cd packages/discord-afk-js_db
-          pnpm run test
+          pnpm i && pnpm run test
 
       # Copy and paste the codecov/test-results-action here
       - name: Upload coverage to Codecov
