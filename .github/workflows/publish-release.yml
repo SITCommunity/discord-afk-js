@@ -2,6 +2,7 @@ name: Publish Release
 
 on:
   release:
+    branches: ['nodb-stable']
     types: [released]
 
 jobs:
