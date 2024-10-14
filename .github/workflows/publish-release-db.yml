@@ -1,4 +1,4 @@
-name: Publish Release
+name: Publish Release Database
 
 on:
   release:
@@ -22,7 +22,7 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
-        uses: ./.github/packages/pnpm
+        uses: ./packages/actions/pnpm
 
       - name: Publish package
         if: github.repository_owner == 'sitcommunity'
