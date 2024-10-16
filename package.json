@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/SITCommunity/discord-afk-js/issues"
   },
-  "homepage": "https://cyrateam.xyz/discord-afk-js",
+  "homepage": "https://cyrateam.xyz/project/discord-afk-js",
   "main": "./src/index.js",
   "types": "./typings/index.d.ts",
   "scripts": {
