@@ -1,6 +1,6 @@
 <div align="center">
   <p>
-    <a target="_blank" href="https://www.npmjs.com/package/discord-afk-js" rel="noopener noreferrer"><img src="https://nodei.co/npm/discord-afk-js.png?downloads=true&downloadRank=true&stars=true"></a>
+    <a target="_blank" href="https://www.npmjs.com/package/discord-afk-js" rel="noopener noreferrer"><img src="https://nodei.co/npm/discord-afk-js.png"></a>
   </p>
   <p>
     <a target="_blank" href="https://nodejs.org/" rel="noopener noreferrer"><img alt="node-current" src="https://img.shields.io/node/v/discord-afk-js"></a>
