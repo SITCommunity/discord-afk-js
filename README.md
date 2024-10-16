@@ -39,10 +39,10 @@ npm install discord-afk-js
 
 # License
 
-This project is open-source and is licensed under MIT License. You can find more details about the license in the [LICENSE.md](https://github.com/CyraTeam/discord-afk-js/blob/main/LICENSE) file included in the project.
+This project is open-source and is licensed under MIT License. You can find more details about the license in the [LICENSE.md](https://github.com/SITCommunity/discord-afk-js/blob/main/LICENSE) file included in the project.
 
 With this comprehensive readme, you have a clear and detailed guide on how to use the **discord-afk-js** library to manage AFK status in your Discord bot.
 
 # Discord Servers
 
-<a href="https://discord.gg/qpT2AeYZRN" target="_blank" rel="noopener noreferrer"><img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord"></a>
+<a href="https://discord.gg/qpT2AeYZRN" target="_blank" rel="noopener noreferrer"><img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=SITCommunity&logo=discord"></a>
