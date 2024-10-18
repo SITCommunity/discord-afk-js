@@ -18,23 +18,23 @@
     <a href="https://www.npmjs.com/package/discord-afk-js" target="_blank" rel="noopener noreferrer">
       <img alt="npm latest" src="https://img.shields.io/npm/v/discord-afk-js/latest?color=blue&label=discord-afk-js%40latest&logo=npm">
     </a>
-    <a href="https://github.com/skick1234/CyraTeam/discord-afk-js" target="_blank" rel="noopener noreferrer">
-      <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/CyraTeam/discord-afk-js">
+    <a href="https://github.com/skick1234/SITCommunity/discord-afk-js" target="_blank" rel="noopener noreferrer">
+      <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/SITCommunity/discord-afk-js">
     </a>
     <a href="https://discord.gg/yyaxUHTRSa" target="_blank" rel="noopener noreferrer">
       <img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord">
     </a>
-    <a href="https://github.com/CyraTeam/discord-afk-js" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/SITCommunity/discord-afk-js" target="_blank" rel="noopener noreferrer">
       <img alt="Visitor" src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FCyraTeam%2Fdiscord-afk-js&countColor=%2337d67a&style=flat">
     </a>
-    <a href="https://github.com/CyraTeam/discord-afk-js/issues" target="_blank" rel="noopener noreferrer">
-      <img alt="Issues" src="https://img.shields.io/github/issues/CyraTeam/discord-afk-js">
+    <a href="https://github.com/SITCommunity/discord-afk-js/issues" target="_blank" rel="noopener noreferrer">
+      <img alt="Issues" src="https://img.shields.io/github/issues/SITCommunity/discord-afk-js">
     </a>
-    <a href="https://github.com/CyraTeam/discord-afk-js" target="_blank" rel="noopener noreferrer">
-      <img alt="Commit" src="https://img.shields.io/github/commit-activity/y/CyraTeam/discord-afk-js?label=Commit%20Activity&logo=github">
+    <a href="https://github.com/SITCommunity/discord-afk-js" target="_blank" rel="noopener noreferrer">
+      <img alt="Commit" src="https://img.shields.io/github/commit-activity/y/SITCommunity/discord-afk-js?label=Commit%20Activity&logo=github">
     </a>
-    <a href="https://codecov.io/gh/CyraTeam/discord-afk-js">
-      <img src="https://codecov.io/gh/CyraTeam/discord-afk-js/graph/badge.svg?token=98ZKDNNXVE"/>
+    <a href="https://codecov.io/gh/SITCommunity/discord-afk-js">
+      <img src="https://codecov.io/gh/SITCommunity/discord-afk-js/graph/badge.svg?token=98ZKDNNXVE"/>
     </a>
   </p>
 </div>
@@ -49,7 +49,7 @@
 
 # Requirements
 
-- [NodeJS] 16.9.0 or higher
+- [NodeJS] 18.x or higher
 
 <!-- Section for installation instructions -->
 
@@ -76,18 +76,17 @@ const { AfkClient } = require("discord-afk-js");
 const afk = new AfkClient();
 
 // Connecting to the database (using MongoDB only)
-// Important! Set log to 'false' for default 'true'
+// Important! Set log to 'false', default 'true'
 afk.connect({ token: "token", log: false });
 
 // Adding a user to AFK status
-const reason = args.join(" ");
-const user = message.author.id;
-afk.addUser(user, reason);
+const reasons = args.join(" ");
+const userId = message.author.id;
+afk.setUser({ id: userId, reason: reason });
 
 if (afk.findUser(user)) {
   console.log("User is marked as AFK");
-  const data = afk.findMessage(user);
-  const timeago = moment(time).fromNow();
+  const data = afk.getReason(user);
 
   console.log("AFK Message:", `${data.reason} ${data.timeData}`);
 }
@@ -96,25 +95,21 @@ if (afk.findUser(user)) {
 afk.removeUser(user);
 ```
 
-<!-- Section for API documentation -->
-
-# API
-
-The discord-afk-js library provides a set of methods for working with AFK status using the AfkClient class.
-
 <!-- Section for Changelog and Migration -->
 
 # Changelog | Migrating to discord-afk-js
 
 ```diff
-+ support for external database
++ addUser > setUser
++ findMessage > getReason
++ toggle check update
 ```
 
 <!-- Section for License information -->
 
 # License
 
-This project is open-source and is licensed under the Apache 2.0 License. Find more details in the [LICENSE.md](https://github.com/CyraTeam/discord-afk-js/blob/main/LICENSE) file included in the project.
+This project is open-source and is licensed under the MIT License. Find more details in the [LICENSE.md](https://github.com/SITCommunity/discord-afk-js/blob/main/LICENSE) file included in the project.
 
 <!-- Section for Discord server information -->
 
@@ -124,6 +119,6 @@ This project is open-source and is licensed under the Apache 2.0 License. Find m
   <img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord">
 </a>
 
-[Here]: https://www.npmjs.com/package/discord-afk-js/v/10.0.0?activeTab=versions
+[Here]: https://www.npmjs.com/package/discord-afk-js?activeTab=versions
 [NodeJS]: https://nodejs.org
 [discord-afk-js]: https://www.npmjs.com/package/discord-afk-js?activeTab=readme
