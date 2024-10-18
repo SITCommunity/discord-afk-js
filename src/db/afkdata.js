@@ -1,6 +1,6 @@
 /**
  * @author brokenedtzjs
- * @license MIT-License
+ * @license MIT
  * @copyright brokenedtzjs
  * @file afkdata.js
  */

@@ -7,8 +7,10 @@ If you wish to contribute to discord-afk-js, feel free to fork the repository an
 ## Setup
 
 1. Fork & clone the repository, make sure you are on the correct branch
-2. Run `npm ci`
+2. Run `pnpm install --frozen-lockfile` ([Install](https://pnpm.io/installation))   
 3. Code your idea
+4. Run `pnpm run test`
+6. Submit a pull request
 
 ## Testing your code
 1. Run `npm test`

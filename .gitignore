@@ -1,4 +1,16 @@
+# Packages
 node_modules
 package-lock.json
+
+# Test Logs
 coverage
-test
+
+# Miscellaneous
+.turbo
+junit.xml
+
+# Generated files
+typings/index.d.mts
+
+# env
+test/testConnect.js
