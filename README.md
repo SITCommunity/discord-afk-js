@@ -116,7 +116,7 @@ This project is open-source and is licensed under the MIT License. Find more det
 # Discord Servers
 
 <a href="https://discord.gg/qpT2AeYZRN" target="_blank" rel="noopener noreferrer">
-  <img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord">
+  <img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=SITCommunity&logo=discord">
 </a>
 
 [Here]: https://www.npmjs.com/package/discord-afk-js?activeTab=versions
