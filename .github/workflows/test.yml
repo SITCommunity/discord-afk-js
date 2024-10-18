@@ -3,9 +3,9 @@ name: Test
 
 on:
   push:
-    branches: ['nodb-stable']
+    branches: ['db-stable']
   pull_request:
-    branches: ['nodb-stable']
+    branches: ['db-stable']
 
 jobs:
   build:
