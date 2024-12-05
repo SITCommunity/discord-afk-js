@@ -9,7 +9,7 @@
   <!-- Displaying various shields for Node.js, npm, GitHub, Discord, and visitor statistics -->
   <p>
     <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">
-      <img alt="node-current" src="https://img.shields.io/node/v/distube">
+      <img alt="node-current" src="https://img.shields.io/node/v/discord-afk-js">
     </a>
     <a href="https://www.npmjs.com/package/discord-afk-js" target="_blank" rel="noopener noreferrer">
       <img alt="npm" src="https://img.shields.io/npm/dt/discord-afk-js">
@@ -18,23 +18,23 @@
     <a href="https://www.npmjs.com/package/discord-afk-js" target="_blank" rel="noopener noreferrer">
       <img alt="npm latest" src="https://img.shields.io/npm/v/discord-afk-js/latest?color=blue&label=discord-afk-js%40latest&logo=npm">
     </a>
-    <a href="https://github.com/skick1234/CyraTeam/discord-afk-js" target="_blank" rel="noopener noreferrer">
-      <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/CyraTeam/discord-afk-js">
+    <a href="https://github.com/skick1234/SITCommunity/discord-afk-js" target="_blank" rel="noopener noreferrer">
+      <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/SITCommunity/discord-afk-js">
     </a>
-    <a href="https://discord.gg/qpT2AeYZRN" target="_blank" rel="noopener noreferrer">
+    <a href="discord.cyrateam.xyz" target="_blank" rel="noopener noreferrer">
       <img alt="Discord" src="https://img.shields.io/discord/984857299858382908?label=CyraTeam&logo=discord">
     </a>
-    <a href="https://github.com/CyraTeam/discord-afk-js" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/SITCommunity/discord-afk-js" target="_blank" rel="noopener noreferrer">
       <img alt="Visitor" src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FCyraTeam%2Fdiscord-afk-js&countColor=%2337d67a&style=flat">
     </a>
-    <a href="https://github.com/CyraTeam/discord-afk-js/issues" target="_blank" rel="noopener noreferrer">
-      <img alt="Issues" src="https://img.shields.io/github/issues/CyraTeam/discord-afk-js">
+    <a href="https://github.com/SITCommunity/discord-afk-js/issues" target="_blank" rel="noopener noreferrer">
+      <img alt="Issues" src="https://img.shields.io/github/issues/SITCommunity/discord-afk-js">
     </a>
-    <a href="https://github.com/CyraTeam/discord-afk-js" target="_blank" rel="noopener noreferrer">
-      <img alt="Commit" src="https://img.shields.io/github/commit-activity/y/CyraTeam/discord-afk-js?label=Commit%20Activity&logo=github">
+    <a href="https://github.com/SITCommunity/discord-afk-js" target="_blank" rel="noopener noreferrer">
+      <img alt="Commit" src="https://img.shields.io/github/commit-activity/y/SITCommunity/discord-afk-js?label=Commit%20Activity&logo=github">
     </a>
-    <a href="https://codecov.io/gh/CyraTeam/discord-afk-js">
-      <img src="https://codecov.io/gh/CyraTeam/discord-afk-js/graph/badge.svg?token=98ZKDNNXVE"/>
+    <a href="https://codecov.io/gh/SITCommunity/discord-afk-js">
+      <img src="https://codecov.io/gh/SITCommunity/discord-afk-js/graph/badge.svg?token=98ZKDNNXVE"/>
     </a>
   </p>
 </div>
